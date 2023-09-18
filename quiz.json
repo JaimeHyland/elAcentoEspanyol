@@ -8,31 +8,25 @@
       },
       "questions": [
         {
-          "number": 1,
           "question": "José-María y _________ pescador tienen mucho en común.",
           "answers": [
-            "el",
-            "él"
-          ],
-          "correct_answer": 1
+            ["el", true],
+            ["él", false]
+          ]
         },
         {
-          "number": 2,
           "question": "El journalista le preguntó a George __________ habia escrito 'Norwegian Wood'.",
           "answers": [
-            "quien",
-            "quíen"
-          ],
-          "correct_answer": 2
+            ["quien", false],
+            ["quíen", true]
+          ]
         },
         {
-            "number": 3,
             "question": "Tengo un _________ de preguntas.",
             "answers": [
-              "monton",
-              "montón"
-            ],
-            "correct_answer": 2
+              ["monton", false],
+              ["montón", true]
+            ]
           }
       ]
     }

@@ -19,13 +19,13 @@
     <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
     <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-    <link rel="manifest" href="assets/favicon/manifest.json">
+    <!-- <link rel="manifest" href="assets/favicon/manifest.json"> -->
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body>
+<body onLoad='fetchQuizFile()''>
     <header>
         <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo"></div>
         <div id="header-title">
@@ -36,10 +36,10 @@
         <nav>
             <ul id="menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="lesson1.html">Lesson one</a></li>
-                <li><a href="lesson2.html">Lesson two</a></li>
-                <li><a href="lesson3.html">Lesson three</a></li>p
-                <li><a href="lesson4.html">Lesson four</a></li>
+                <li><a href="#lesson1">Lesson one</a></li>
+                <li><a href="#lesson2">Lesson two</a></li>
+                <li><a href="#lesson3">Lesson three</a></li>
+                <li><a href="#lesson4">Lesson four</a></li>
             </ul>
         </nav>
     </header>
@@ -57,10 +57,10 @@
 
         </div>
         <div class="lessons-container">
-            <div class="lesson1">Lesson1</div>
-            <div class="lesson2">Lesson2</div>
-            <div class="lesson3">Lesson3</div>
-            <div class="lesson4">Lesson4</div>
+            <div id="lesson1">Lesson1</div>
+            <div id="lesson2">Lesson2</div>
+            <div id="lesson3">Lesson3</div>
+            <div id="lesson4">Lesson4</div>
         </div>
     </main>
     <footer>
