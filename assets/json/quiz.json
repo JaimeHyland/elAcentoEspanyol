@@ -1,0 +1,40 @@
+
+{
+    "quiz": {
+        "number": 1,
+        "name": "el-acento-espanyol",
+        "questions": 8,
+        "revision": "2023-09-18"
+      },
+      "questions": [
+        {
+          "number": 1,
+          "question": "José-María y _________ pescador tienen mucho en común.",
+          "answers": [
+            "el",
+            "él"
+          ],
+          "correct_answer": 1
+        },
+        {
+          "number": 2,
+          "question": "El journalista le preguntó a George __________ habia escrito 'Norwegian Wood'.",
+          "answers": [
+            "quien",
+            "quíen"
+          ],
+          "correct_answer": 2
+        },
+        {
+            "number": 3,
+            "question": "Tengo un _________ de preguntas.",
+            "answers": [
+              "monton",
+              "montón"
+            ],
+            "correct_answer": 2
+          }
+      ]
+    }
+    
+    

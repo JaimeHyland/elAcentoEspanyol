@@ -1,0 +1,137 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
+
+body {
+    background: #f7eedd;
+    color: #5e463c;
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1 {
+    display: block;
+    font-size: 1.5em;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+h2 {
+    display: block;
+    font-size: 1.17em;
+    margin: 0 10px;
+    font-weight: bold;
+}
+
+h3 {
+    display: block;
+    font-size: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    margin-left: 0;
+    margin-right: 0;
+    font-weight: bold;
+}
+
+header {
+    top: 0;
+    position: fixed;
+    display: flex;
+    width: 100%;
+    flex-direction: row;
+    align-content: center;
+    justify-content: space-between;
+    background-color: #ecd9b1;
+    padding: 10px 0;
+    box-shadow: 0 1px 1px #5e463c;
+}
+
+#icon {
+    max-width: 60px;
+    max-height: 60px;
+    padding: 0 20px;
+    float: left;
+    align-self: center;
+}
+
+#icon>img {
+    width: 100%;
+    height: 100%;
+    object-fit: scale-down;
+}
+
+#header-title {
+    float: center;
+    text-align: center;
+}
+
+#nav-toggle {
+    display: none;
+}
+
+#nav-toggle:checked~nav {
+    display: block;
+}
+
+.nav-toggle-burger {
+    font-size: 3rem;
+    flex-flow: right;
+    align-self: center;
+    padding: 0 20px;
+}
+
+nav {
+    display: none;
+    position: absolute;
+    background-color: #f7eedd;
+    width: 100%;
+    left: 0;
+    box-shadow: 0 1px 1px #5e463c;
+    top: 100%;
+}
+
+
+#menu {
+    display: flex;
+    flex-direction: column;
+    list-style-type: none;
+    padding: 0;
+}
+
+#menu>li {
+    margin-bottom: 1em;
+}
+
+.active {
+    border-bottom: 1px solid seagreen;
+}
+
+header a {
+    text-decoration: none;
+    color: inherit;
+}
+
+main {
+    margin-top: 87px;
+    overflow: hidden;
+}
+
+#question-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.question-text {
+padding: 10px 20px;
+}
+
+.answer-options {
+    display: flex;
+    flex-direction: row;
+    align-content: space-around;
+    justify-content: space-evenly;
+}
+
+.answer-option {
+    background-color: aliceblue;
+    padding: 10px 1rem;
+    box-shadow: 1px 1px 1px #5e463c;
+}
