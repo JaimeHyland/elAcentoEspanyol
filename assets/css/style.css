@@ -134,9 +134,14 @@ main {
 .answer-option {
     background-color: aliceblue;
     padding: 10px 1rem;
-    max-width:  30px;
+    max-width:  60px;
     box-shadow: 1px 1px 1px #5e463c;
 }
+
+.answer-correct {
+    display: none;
+}
+
 
 #lessons-container {
     margin: 20px 0;
@@ -155,7 +160,10 @@ main {
 
 }
 
-.active,
+.active {
+
+}
+
 .collapsible:hover {
     background-color: #6b584a;
 }

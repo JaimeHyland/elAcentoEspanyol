@@ -1,0 +1,11 @@
+// Assuming you have a parent element with an id of "container" that contains your dynamically created divs
+
+document.getElementById('container').addEventListener('click', function(event) {
+    // Check if the clicked element is a div
+    if (event.target.tagName === 'DIV') {
+      // Now you can do something with the clicked div
+      var clickedDiv = event.target;
+      // Perform your actions here
+      console.log('You clicked on div with ID: ' + clickedDiv.id);
+    }
+  });

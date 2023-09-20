@@ -52,11 +52,11 @@
             </div>
         </div>
         <div class="score">
-            <p class="score"></p>
+            <p id="running-total"></p>
         </div>
         <div id="lessons-container">
 
-            <button type="button" class="collapsible" id="Lesson1">Lesson One &mdash; palabras agudas</button>
+            <button type="button" class="collapsible" id="lesson1">Lesson One &mdash; <em>palabras agudas</em></button>
             <div class="content">
                 <p>Don't put a written accent on word whose stress is on their last syllable (the Real Academia de la
                     Lengua Espanola call them "palabras agudas") unless they end with
@@ -290,25 +290,11 @@
     <footer>
 
     </footer>
-    <!-- font awsome script -->
     <script src="assets/js/scripts.js"></script>
-    <script src="https://kit.fontawesome.com/c92ad0e9bd.js" crossorigin="anonymous"></script>
-    <script>
-        var coll = document.getElementsByClassName("collapsible");
-        var i;
 
-        for (i = 0; i < coll.length; i++) {
-            coll[i].addEventListener("click", function () {
-                this.classList.toggle("active");
-                var content = this.nextElementSibling;
-                if (content.style.display === "block") {
-                    content.style.display = "none";
-                } else {
-                    content.style.display = "block";
-                }
-            });
-        }
-    </script>
+    <!-- font awsome script -->
+    <script src="https://kit.fontawesome.com/c92ad0e9bd.js" crossorigin="anonymous"></script>
+    
 </body>
 
 </html>
