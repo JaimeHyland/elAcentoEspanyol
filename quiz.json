@@ -11,7 +11,8 @@
           "question": "José-María y _________ pescador tienen mucho en común.",
           "answers": [
             ["el", true],
-            ["él", false]
+            ["él", false],
+            ["ella", false]
           ]
         },
         {

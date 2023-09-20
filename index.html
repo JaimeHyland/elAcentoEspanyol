@@ -25,7 +25,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onLoad='fetchQuizFile()''>
+<body onLoad='fetchQuizFile()'>
     <header>
         <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo"></div>
         <div id="header-title">
@@ -36,31 +36,255 @@
         <nav>
             <ul id="menu">
                 <li><a href="index.html" class="active">Home</a></li>
-                <li><a href="#lesson1">Lesson one</a></li>
-                <li><a href="#lesson2">Lesson two</a></li>
-                <li><a href="#lesson3">Lesson three</a></li>
-                <li><a href="#lesson4">Lesson four</a></li>
+                <li><a href="#lesson1">Lesson One</a></li>
+                <li><a href="#lesson2">Lesson Two</a></li>
+                <li><a href="#lesson3">Lesson Three</a></li>
+                <li><a href="#lesson4">Lesson Four</a></li>
             </ul>
         </nav>
     </header>
     <main>
-        <div class="question-container">
+        <div id="question-container">
             <div class="question">
-                <p class="question-text">José-María y ________ pescador gallego tienen mucho en común.</p>
+                <p id="question-text"></p>
             </div>
-            <div class="answer-options">
-                <div id="option1" class="answer-option">el</div>
-                <div id="option2" class="answer-option">él</div>
+            <div id="answer-options">
             </div>
         </div>
         <div class="score">
-
+            <p class="score"></p>
         </div>
-        <div class="lessons-container">
-            <div id="lesson1">Lesson1</div>
-            <div id="lesson2">Lesson2</div>
-            <div id="lesson3">Lesson3</div>
-            <div id="lesson4">Lesson4</div>
+        <div id="lessons-container">
+
+            <button type="button" class="collapsible" id="Lesson1">Lesson One &mdash; palabras agudas</button>
+            <div class="content">
+                <p>Don't put a written accent on word whose stress is on their last syllable (the Real Academia de la
+                    Lengua Espanola call them "palabras agudas") unless they end with
+                    a consonant other than <em>n</em> or <em>s</em>.</p>
+
+                <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written accent on the stressed
+                    vowel.</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        comer
+                    </li>
+                    <li>
+                        profesor
+                    </li>
+                    <li>
+                        Madrid
+                    </li>
+                    <li>
+                        animal
+                    </li>
+                </ul>
+
+
+                <h4>BUT</h4>
+
+                <ul>
+                    <li>
+                        comió
+                    </li>
+                    <li>
+                        será
+                    </li>
+                    <li>
+                        comilón
+                    </li>
+                    <li>
+                        organización
+                    </li>
+                    <li>
+                        aquí
+                    </li>
+                    <li>
+                        estás
+                    </li>
+                    <li>
+                        mamá
+                    </li>
+                    <li>
+                        sofás
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible" id="Lesson2">Lesson Two &mdash; palabras llanas</button>
+            <div class="content">
+                <p>With words that have their stress on their second to last syllable (The Real Academia call these ones
+                    "palabras graves" or "palabras llanas"), the rule is the other way around:
+                    they <em>should</em> be given a written accent if they end with a consonant other than <em>n</em> or <em>s</em>. And
+                    if they end with an <em>n</em>, an <em>s</em> or a vowel, then you <em>shouldn't</em> mark the stress in writing.</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        azúcar
+                    </li>
+                    <li>
+                        lápiz
+                    </li>
+                    <li>
+                        cárcel
+                    </li>
+                    <li>
+                        fútbol
+                    </li>
+                </ul>
+
+
+                <h4>BUT</h4>
+
+                <ul>
+                    <li>
+                        barco
+                    </li>
+                    <li>
+                        cama
+                    </li>
+                    <li>
+                        dinero
+                    </li>
+                    <li>
+                        naranjas
+                    </li>
+                    <li>
+                        galleta
+                    </li>
+                    <li>
+                        alguien
+                    </li>
+                    <li>
+                        terminan
+                    </li>
+                    <li>
+                        Carmen
+                    </li>
+                </ul>
+
+                <p>There is, however, <em></em>an exception</em> you'll probably need to remember: with palabras llanas that end with <em>n</em> or <em>s</em>, if the <em>n</em> or <em>s</em> is
+                    preceded by a consonant, then you'll need to mark the stressed syllable with a written accent after all.</p>
+                <p>This often affects words with a recent origin in a foreign language (or Latin).</p>
+    
+                <h3>For example:</h3>
+                <ul>
+                    <li>bíceps/li>
+                    <li>wéstern</li>
+                    <li>cómics</li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible" id="Lesson3">Lesson Three &mdash; palabras esdrújulas and sobreesdrújulas</button>
+            <div class="content">
+                <p>Words with a stress on their third from last syllable (called "palabras esdrújulas" by the Real
+                    Academia) always have a written accent.</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        bellísimo
+                    </li>
+                    <li>
+                        pájaro
+                    </li>
+                    <li>
+                        célula
+                    </li>
+                    <li>
+                        contentísima
+                    </li>
+                </ul>
+
+                <p>Words with the stress before the third syllable (palabras sobreesdrújulas) also need their stressed syllable to be marked with a written accent.</p>
+
+<p>As always, though, (¿cómo no?) there is an exception. In this case, however, it's pretty easy to remember: adverbs ending with <em>-mente</em> don't need a written accent unless the adjective that forms their root needs one. Just use the rule to add -mente leave any accent that was already on the root untouched.</p>
+                <h4>SO ...</h4>
+
+                <ul>
+                    <li>
+                        velozmente
+                    </li>
+                    <li>
+                        claramente
+                    </li>
+                </ul>
+
+                <h4>BUT ...</h4>
+                <ul>
+                    <li>
+                        simpáticamente (because <em>simpática</em> (as a palabra esdrújula) already a needs an accent!)
+                    </li>
+                    <li>
+                        útilmente (because, útil (as a palabra llana ending with a consonant other than n or s) already needs an accent!)
+                    </li>
+                    <li>
+                        cortésmente (because, cortés (as a palabra aguda ending with an s) already needs an accent!)
+                    </li>
+                </ul>
+            </div>
+            <button type="button" class="collapsible" id="Lesson4">Lesson Four &mdash; distinguishing homonyms</button>
+            <div class="content">
+                <p>Some very commonly used (and mostly short) words have a written accent when used in one sense and have none when used in another.</p>
+
+                <p>The following are some of the most common ones:</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        dé (from the verb dar) vs. de (of) 
+                    </li>
+                    <li>
+                        sé (from the verb ser) vs. se (reflexive pronoun)
+                    </li>
+                    <li>
+                        él (as a pronoun) vs. el (the definite article)
+                    </li>
+                    <li>
+                        tú (you) vs tu (your)
+                    </li>
+                    <li>
+                        mí (me) vs mi (my)
+                    </li>
+                    <li>
+                        té (tea) vs. te (you) 
+                    </li>
+                    <li>
+                        qué (as a question word &ndash; in direct or indirect questions) vs. que (as a relative pronoun)
+                    </li>
+                    <li>
+                        quién/quiénes (as a question word) vs. quien/quienes (as a relative pronoun)
+                    </li>
+                    <li>
+                        cuándo vs. cuando (see above)
+                    </li>
+                    <li>
+                        cuánto/cuántos vs. cuanto/cuandos<br>
+                        cuánta/cuántas vs. cuanta/cuantas (see above)
+                    </li>
+                    <li>
+                        cuál/cuáles vs. cual/cuales (see above)
+                    </li>
+                    <li>
+                        por qué vs. porque (see above)
+                    </li>
+                    <li>
+                        cómo vs. como (like, as in similar to)
+                    </li>
+                    <li>
+                        más (more) vs. mas (but)
+                    </li>
+                    <li>
+                        solo (alone) vs. sólo (only)
+                    </li>
+                    <li>
+                        sí (yes) vs. si (if)
+                    </li>
+                    li>
+                        aún (still, even) vs. aun (despite)
+                    </li>
+                </ul>
+            </div>
         </div>
     </main>
     <footer>
@@ -69,6 +293,22 @@
     <!-- font awsome script -->
     <script src="assets/js/scripts.js"></script>
     <script src="https://kit.fontawesome.com/c92ad0e9bd.js" crossorigin="anonymous"></script>
+    <script>
+        var coll = document.getElementsByClassName("collapsible");
+        var i;
+
+        for (i = 0; i < coll.length; i++) {
+            coll[i].addEventListener("click", function () {
+                this.classList.toggle("active");
+                var content = this.nextElementSibling;
+                if (content.style.display === "block") {
+                    content.style.display = "none";
+                } else {
+                    content.style.display = "block";
+                }
+            });
+        }
+    </script>
 </body>
 
 </html>
