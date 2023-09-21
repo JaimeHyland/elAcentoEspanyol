@@ -1,35 +1,66 @@
-
 {
-    "quiz": {
-        "number": 1,
-        "name": "el-acento-espanyol",
-        "questions": 8,
-        "revision": "2023-09-18"
-      },
-      "questions": [
-        {
-          "question": "José-María y _________ pescador tienen mucho en común.",
-          "answers": [
-            ["el", true],
-            ["él", false],
-            ["ella", false]
-          ]
-        },
-        {
-          "question": "El journalista le preguntó a George __________ habia escrito 'Norwegian Wood'.",
-          "answers": [
-            ["quien", false],
-            ["quíen", true]
-          ]
-        },
-        {
-            "question": "Tengo un _________ de preguntas.",
-            "answers": [
-              ["monton", false],
-              ["montón", true]
-            ]
-          }
+  "quiz": {
+    "number": 1,
+    "name": "el-acento-espanyol",
+    "questions": 8,
+    "revision": "2023-09-18"
+  },
+  "questions": [
+    {
+      "question": "José-María y _________ pescador tienen mucho en común.",
+      "answers": [
+        [
+          "el",
+          true
+        ],
+        [
+          "él",
+          false
+        ],
+        [
+          "ella",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "El journalista le preguntó a George __________ habia escrito 'Norwegian Wood'.",
+      "answers": [
+        [
+          "quien",
+          false
+        ],
+        [
+          "quíen",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Tengo un _________ de preguntas.",
+      "answers": [
+        [
+          "monton",
+          false
+        ],
+        [
+          "montón",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Hay _________ contestar las cartas de la Agencia Tributaria.",
+      "answers": [
+        [
+          "qué",
+          false
+        ],
+        [
+          "que",
+          true
+        ]
       ]
     }
-    
-    
+  ]
+}
