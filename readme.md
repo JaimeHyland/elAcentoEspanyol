@@ -93,6 +93,9 @@ As the site owner, I will expect to:
 - have a website that conforms to German law requiring the website owner (me) to identify myself appropriately, and to provide contact information for the person responsible for the upkeep and security of the site and the data it contains.
 - include links to the various accounts of my language school on social media.
 
+### A note on the language used
+
+The target users of this website will all be competent users of Spanish and will be on this site to help them in their language learning process. However, many will not be very advanced learners. The language of the site would therefore ordinarily be what's often referred to as simplified Spanish. The only reason it is in English is to **facilitate the site's assessors**. I'd therefore like the assessors to take into account that the whole site will be rendered in simplified Spanish as soon as feasible after assessment has been completed.
 - - -
 
 <!-- TOC --><a name="structure-from-the-users-point-of-view"></a>
@@ -146,6 +149,9 @@ I have implemented a combination of two clean san-serif fonts suitable for the S
 ### Colours
 Colours are in appropriate warm terra-cotta and earthy colours appropriate to the Spanish theme and to **accessibility guidelines**.
 
+### Shapes and shadows
+The shadows are strong and sharp, reflecting Spanish sunshine, and the buttons are inspired by the form and colours of traditional Spanish windows.
+
 <!-- TOC --><a name="responsiveness"></a>
 ### Responsiveness
 - The website is fully responsive over all tested screen on both portrait and landscape orientations, where applicable (see [Testing](testing) section below).
@@ -193,7 +199,7 @@ The steps for deploying the website to its github host pages are as follows:
 - Choose the Settings icon in the right Github repository.
 - Under the list headed 'General', find the 'Pages' item from the 'Code and automation' menu.
 - Select 'Deploy from a branch' from the drop-down list labelled 'Source'.
-- Select 'main' as your branch Branch, select 'main' from the drop-down list and Save.
+- Select 'main' as your branch, select 'main' from the drop-down list and Save.
 - The URL of your site will appear in a box near the top of the page.
 - Click on the URL or on the 'Visit site' icon to open your newly deployed site in a new tab.
 - The site will then update automatically every time you push a new commit to the master branch.
@@ -271,7 +277,6 @@ I ran the html code on each page through the officila
 I validated my html and css code regularly during development via direct input into the validation services provided by W3C at [validator.w3.org](https://validator.w3.org/) and [jigsaw.w3.org](https://jigsaw.w3.org/css-validator/). My final code passes both validation tests.
 
 - - -
-
 <!-- TOC --><a name="lessons-learnt"></a>
 ## Lessons learnt
 <!-- TOC --><a name="mobile-first"></a> 

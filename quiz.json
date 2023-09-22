@@ -1,4 +1,98 @@
 {
+  "spot-checks": {
+    "questions": [
+      {
+        "question": "What do Spanish grammaticians call words with spoken stress on their last syllable?",
+        "answers": [
+          [
+            "palabras llanas",
+            false
+          ],
+          [
+            "palabras agudas",
+            false
+          ],
+          [
+            "palabras sobreesdrújulas",
+            false
+          ],
+          [
+            "palabras tildes",
+            false
+          ]
+        ]
+      },
+      {
+        "question": "Which palabras llanas require a written acento?",
+        "answers": [
+          [
+            "Ones ending with n, s or a vowel",
+            false
+          ],
+          [
+            "All of them",
+            false
+          ],
+          [
+            "Ones ending with anything other than an n, l or a vowel",
+            false
+          ],
+          [
+            "Ones ending with anything other than an n, s or a vowel",
+            true
+          ]
+        ]
+      },
+      {
+        "question": "Words ending with '-mente' never have a written acento.",
+        "answers": [
+          [
+            "true",
+            false
+          ],
+          [
+            "false",
+            true
+          ]
+        ]
+      },
+      {
+        "question": "The Spanish word for 'alone' is written like this:",
+        "answers": [
+          [
+            "sólo",
+            false
+          ],
+          [
+            "solo",
+            true
+          ],
+          [
+            "There's a fight going on about it!",
+            false
+          ]
+        ]
+      },
+      {
+        "question": "How many syllables have the words 'hacia' and 'hacía'",
+        "answers": [
+          [
+            "Two and three, respectively",
+            true
+          ],
+          [
+            "They both have three",
+            false
+          ],
+          [
+            "They both have two",
+            false
+          ]
+        ]
+      }
+    ]
+  },
+
   "quiz": {
     "number": 1,
     "name": "el-acento-espanyol",

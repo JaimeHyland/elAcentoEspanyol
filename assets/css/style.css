@@ -144,7 +144,9 @@ main {
 
 
 #lessons-container {
+    display: flex;
     margin: 20px 0;
+    flex-direction: row;
 }
 
 .collapsible {
@@ -158,6 +160,14 @@ main {
     outline: none;
     font-size: 15px;
 
+}
+
+.full-lesson {
+    display: none;
+}
+
+.bullet-point-rules {
+    display: none;
 }
 
 .active {

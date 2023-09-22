@@ -58,22 +58,28 @@ function fillQuestion(_count) {
             document.getElementById("running-total").innerHTML = `This is the first and only question in the quiz. Good luck!`;
         } else if (currentQuestion === 1 && questionsLeft === 1) {
             // just two questions; this is the first one
-            document.getElementById("running-total").innerHTML = `This is the first question; you have this and just more one question to go! Good luck!`;
+            document.getElementById("running-total").innerHTML = `This is the first question; you have this and just one more question to do! Good luck!`;
         } else if (currentQuestion === 1) {
             //three questions or more; this is the first one
             document.getElementById("running-total").innerHTML = `This is your first question! There are ${totalQuestions} questions in total!`;
-        } else if (questionsLeft === 1) {
-            //three questions or more, one question left.
-            document.getElementById("running-total").innerHTML = `You have answered ${correctAnswers} questions correctly out of 
-            ${questionsCompleted} so far; you have just ${questionsLeft} question left to do!`;
         } else {
-            document.getElementById("running-total").innerHTML = `You have answered ${correctAnswers} questions correctly out of 
-            ${questionsCompleted} so far; you still have ${questionsLeft} questions to go!`;
+            //allow for singulars and plurals in messages to user
+            let _questionsCorrectString = "questions";
+            let _questionsLeftString = "questions";
+
+            if (correctAnswers === 1) {
+                questionsCorrectString = "question";
+            };
+            if (questionsLeft === 1) {
+                questionsLeftString = "question";
+            };
+            document.getElementById("running-total").innerHTML = `You have answered ${correctAnswers} ${_questionsCorrectString} correctly out of 
+                ${questionsCompleted} so far; you have ${questionsLeft} ${_questionsLeftString} left to do!`;
         }
     }
 }
 
-// evaluate click/tap on answer-options div
+// run click handler when user clicks on an answer-option
 
 function setupClickHandler() {
     document.getElementById('answer-options').addEventListener('click', function (event) {
@@ -87,7 +93,7 @@ function setupClickHandler() {
                     questionsCompleted++;
                     fillQuestion(currentQuestion);
                 } else {
-                    finished=true;
+                    finished = true;
                     announceResults(quizStats);
                 }
             }
@@ -111,19 +117,31 @@ function evaluateAnswer(idString) {
 function announceResults(quizStats) {
     document.getElementById('question-text').innerHTML = "<em>You've finished the quiz!</em>";
     document.getElementById('answer-options').innerHTML = "";
-    let _encouragementString="";
     with (quizStats) {
         if (correctAnswers === totalQuestions) {
             _feedbackString = "Perfect score! Congratulations!";
         } else if (correctAnswers >= totalQuestions * .75) {
             _feedbackString = "Not bad! Keep up the good work!";
-        } else if (correctAnswers>=totalQuestions * .5) {
+        } else if (correctAnswers >= totalQuestions * .5) {
             _feedbackString = "This still needs a little work! Take another look at the rules!";
         } else {
-            _feedbackString = "If you'd chosen your answers at random, you would have probably done better! It's back to the drawing board!";
-        }
-        document.getElementById("running-total").innerHTML = `You have answered ${correctAnswers} questions correctly out of 
+            _feedbackString = "If you'd chosen your answers at random, you'd probably have done better! I'm afraid it's back to the drawing board!";
+        };
+        // allow for singular and plurals in result
+        let _questionsCorrectString = "questions";
+        if (correctAnswers === 1) {
+            _questionsCorrectString = "question";
+        };
+        if (totalQuestions === 1) {
+            if (correctAnswers === 0) {
+                document.getElementById("running-total").innerHTML = `Hard luck! You got the question wrong!`;
+            } else {
+                document.getElementById("running-total").innerHTML = `Well done! That's correct!`;
+            }
+        } else  {
+            document.getElementById("running-total").innerHTML = `You answered ${correctAnswers} ${_questionsCorrectString} correctly out of 
         ${totalQuestions}. <br>${_feedbackString}`;
+        };
     }
 }
 
