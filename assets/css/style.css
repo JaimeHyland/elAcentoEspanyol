@@ -6,16 +6,24 @@
     margin: 0;
     box-sizing: border-box;
 }
+
+html { 
+    background: url(../images/alhambra.webp) no-repeat center fixed;     
+    background-size: cover;
+}
+
 body {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
+    min-height: 100%;
+    max-width: 1200px;
     background: #f7eedd;
     color: #5e463c;
-    margin: 0;
+    margin: auto;
+    align-content: center;
     font-family: 'Montserrat', sans-serif;
+      
 }
-
 
 h1,
 h2,
@@ -38,6 +46,30 @@ h3 {
     font-weight: 400;
 }
 
+a:link {
+    color: #fabe00;;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:visited {
+    color: #eed090;
+    background-color: transparent;
+    text-decoration: none;
+  }
+  
+  a:hover {
+    color: #f2f3ae;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+  
+  a:active {
+    color: #f7eedd;
+    background-color: transparent;
+    text-decoration: underline;
+  }
+
 
 /** Header **/
 header {
@@ -53,6 +85,7 @@ header {
     box-shadow: 0 2px 4px #5e463c;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
 }
 
 #icon {
@@ -91,6 +124,7 @@ header {
 main {
     margin-top: 101px;
     width: 100%;
+    max-width: 1200px;
 }
 
 #link-to-quiz {
@@ -172,6 +206,14 @@ main {
     outline: none;
     font-size: 15px;
     text-align: center;
+    box-shadow: 2px 2px 1px #5e463c;
+}
+.content p {
+    margin: 10px 10px;
+}
+
+.content li {
+    margin: 10px 10px 10px 30px;
 }
 
 .full-lesson {
@@ -217,6 +259,7 @@ footer {
     padding: 10px;
     bottom: 0;
     width: 100%;
+    max-width: 1200px;
     background-color: #ecd9b1;
     box-shadow: 0px -2px 4px  #5e463c;
 }
@@ -242,4 +285,61 @@ ul#social-networks a {
     color: #5e463c;
     text-decoration: none;
     font-weight: 600;
+}
+
+/* Style info text */
+
+.blurb-heading {
+    letter-spacing: 1px;
+    margin: 20px 0;
+}
+
+.legal-blurb {
+    padding: 6px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #5e463c;
+    color: #fafafa;
+    background-size: cover;
+    background-position: 75%;
+    padding: 10px 0 30px;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+/* blurb text */
+ .legal-blurb p,
+ .legal-blurb h3 {
+    max-width: 450px;
+}
+
+.legal-blurb p {
+    padding: 0 8px;
+    font-size: 14px;
+    text-align: justify;
+}
+
+.declaration {
+    margin: 8px 0;
+}
+
+ .legal-blurb h3 {
+    text-align: center;
+    margin: 20px 0 10px;
+}
+
+.legal-blurb a {
+        background-color: transparent;
+        text-decoration: none;
+}
+
+address {
+    padding: 18px 12px;
+    font-style: italic;
+}
+
+.name-value>span {
+    padding: 8px 0;
+    font-weight: bolder;
 }

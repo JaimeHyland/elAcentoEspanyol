@@ -1,63 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="assets/css/style.css">
-        <title>Document</title>
-        <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
-        <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
-        <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
-        <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
-        <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
-        <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
-        <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
-        <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
-        <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
-        <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
-        <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
-        <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
-        <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
-        <!-- <link rel="manifest" href="assets/favicon/manifest.json"> -->
-        <meta name="msapplication-TileColor" content="#ffffff">
-        <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
-        <meta name="theme-color" content="#ffffff">
-    </head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <title>Document</title>
+    <link rel="apple-touch-icon" sizes="57x57" href="assets/favicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="assets/favicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="assets/favicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="assets/favicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="assets/favicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="assets/favicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="assets/favicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="assets/favicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="assets/favicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="assets/favicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="assets/favicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="assets/favicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="assets/favicon/favicon-16x16.png">
+    <!-- <link rel="manifest" href="assets/favicon/manifest.json"> -->
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="assets/favicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
 </head>
+
 <body>
     <header>
-        <div class="home-icon-container">
-            <a href="index.html"><i class="fa-solid fa-house-chimney" id="home-icon"></i></a>
+        <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo">
         </div>
-
-        <div class="logo-heading">
-            <a href="index.html">
-                <h1 class="logo-title text-grow">Farming Futures</h1>
-            </a>
-            <p class="logo-subtitle">Futures in food production</p>
+        <div id="header-text">
+                <h1 id="site-heading">El <em>acento</em> español</h1>
+                <p id="site-subheading">Five rules on using the<br><em>acento</em> in Spanish</p>
         </div>
-
-        <input type="checkbox" id="nav-site-toggle" name="nav-site-toggle">
-        <label for="nav-site-toggle" class="nav-site-toggle-label">
-            <i class="fa-solid fa-bars icon-grow"></i>
-        </label>
-
-        <nav id="nav-anchor" class="nav-anchor">
-            <a href="#ag-science" class="text-grow"><i class="fa-solid fa-tractor fa-lg"></i> Ag Science</a>
-            <a href="#robotics" class="text-grow"><i class="fa-solid fa-robot fa-lg"></i> Robotics</a>
-            <a href="#artificial-intelligence" class="text-grow"><i class="fa-solid fa-brain fa-lg"></i> AI</a>
-            <a href="#events" class="text-grow"><i class="fa-regular fa-calendar-days fa-lg"></i> Events</a>
-        </nav>
-
-        <nav id="nav-site" class="nav-site">
-            <ul id="site-menu">
-                <li class="text-grow"><a href="index.html">Home</a></li>
-                <li class="text-grow"><a href="gallery.html">Gallery</a></li>
-                <li class="text-grow"><a href="explore.html">Explore</a></li>
-                <li class="text-grow"><a href="subscribe.html">Subscribe</a></li>
-            </ul>
-        </nav>
+        <div id="link-to-quiz">
+            <i class="fa-solid fa-pencil fa-2xl"></i>
+        </div>
     </header>
 
     <!-- Content wrapper to facilitate the back-to-top button -->
@@ -65,22 +43,24 @@
         <main class="imprimatur legal-blurb">
             <h2 class="blurb-heading">Imprimatur</h2>
             <p class="declaration">The following company is responsible for the operation of the website located at
-                <a href="index.html">https://jaimehyland.github.io/farming-futures/</a> and for the products and
+                <a href="index.html">jaimehyland.github.io/el-AcentoEspanyol/</a> and for the products and
                 services offered on that website:
             </p>
 
             <address class="postal-address">
-                Farming Futures<br>
+                Language Landshapes<br>
                 88 Waltham Road<br>
                 Blackrock<br>
                 Co. Cork<br>
             </address>
 
             <p class="declaration">All issues regarding services offered and data collected via or by this site should
-                be discussed either by writing to the above address, or by using the telephone number or e-mail address listed below.</p>
+                be discussed either by writing to the above address, or by using the telephone number or e-mail address
+                listed below.</p>
 
             <p class="name-value"><span>Managing Director:</span> Jaime Hyland</p>
-            <p class="declaration">Farming Futures is registered as a charity at the Companies Registration Office, Dublin.
+            <p class="declaration">Language Landshapes is registered as a charity at the Companies Registration Office,
+                Dublin.
             </p>
             <p class="name-value"><span>VAT ID:</span> IE00000000</p>
 
@@ -91,7 +71,7 @@
             <p class="name-value"><span>Tel:</span> + 353 1 00 00 000</p>
 
             <p class="name-value"><span>e-mail:</span> <a
-                    href="mailto:info@farming-futures.ie">info@farming-futures.ie</a>
+                    href="mailto:info@language-landshapes.eu">info@language-landshapes.eu</a>
             </p>
 
             <p class="declaration">For any queries related to this website, please use the above email address or
@@ -143,4 +123,5 @@
         Jo Heyndels' walkthrough project. -->
     <script src="https://kit.fontawesome.com/3b20d96fa9.js" crossorigin="anonymous"></script>
 </body>
+
 </html>
