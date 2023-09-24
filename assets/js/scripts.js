@@ -10,7 +10,15 @@ let quizStats = {
     started: false
 };
 
+let collapsibleColorScheme =[['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd']];
+let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'],['#2e744b', '#eed090']];
+
+console.log(document.getElementsByClassName('collapsible')[0]);
+console.log(collapsibleColorScheme);
+chooseColorSchemes(document.getElementsByClassName('collapsible'), collapsibleColorScheme);
+chooseColorSchemes(document.getElementsByClassName('link-to-lesson'), lessonLinkColorScheme);
 setupClickHandler();
+
 
 async function fetchQuizFile() {
     try {
@@ -102,9 +110,9 @@ function setupClickHandler() {
 }
 
 function evaluateAnswer(idString) {
-    let answerId = idString.split("-");
+    let _answerId = idString.split("-");
     with (quizStats) {
-        if (answerId[1] === "true") {
+        if (_answerId[1] === "true") {
             correctAnswers++;
             document.getElementById(idString).style.backgroundColor = 'green';
         } else {
@@ -145,17 +153,10 @@ function announceResults(quizStats) {
     }
 }
 
-
-
-
-function totScore(count) {
-
-}
-
 var collapsible = document.getElementsByClassName("collapsible");
 var i;
 
-for (i = 0; i < collapsible.length; i++) {
+for (let i = 0; i < collapsible.length; i++) {
     collapsible[i].addEventListener("click", function () {
         this.classList.toggle("active");
         var content = this.nextElementSibling;
@@ -166,5 +167,43 @@ for (i = 0; i < collapsible.length; i++) {
         }
     });
 }
+
+function chooseColorSchemes(divArray, colorSchemeArray) {
+    let colorSchemeNum = genUnorderedIntArray(0, divArray.length - 1);
+    console.log('divArray[0]: ' + divArray[0]);
+    console.log("colorSchemeArray: " + colorSchemeNum);
+    for(let i in colorSchemeNum) {
+        console.log(divArray[i]);
+        console.log("colorScheme: " + colorSchemeArray[colorSchemeNum[i]][0]);
+        divArray[i].style.backgroundColor = colorSchemeArray[colorSchemeNum[i]][0];
+        divArray[i].style.color = colorSchemeArray[colorSchemeNum[i]][1];
+        console.log(divArray[i]);
+        console.log(colorSchemeArray[colorSchemeNum[i]]);
+    }
+}
+
+//Create an array of integers and mix em up!
+function genUnorderedIntArray(from, to) {
+    const array = genOrderedIntArray(from, to);
+  
+    for (let i = array.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [array[i], array[j]] = [array[j], array[i]];
+    }
+  
+    return array;
+  }
+  function genOrderedIntArray(from, to) {
+    if (from > to) {
+        throw new Error("Error: from value is greater than end value!");
+    }
+  
+    let result = []
+    for(let i = from; i <= to; i++) {
+      result.push(i);
+    }
+    console.log(result);
+    return result;
+  }
 
 

@@ -26,412 +26,396 @@
 </head>
 
 <body onLoad='fetchQuizFile()'>
+
     <header>
-        <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo"></div>
-        <div id="header-title">
-            <h1>El acento español</h1>
+        <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo">
+        </div>
+        <div id="header-text">
+                <h1 id="site-heading">El <em>acento</em> español</h1>
+                <p id="site-subheading">Five rules on using the<br><em>acento</em> in Spanish</p>
         </div>
         <div id="link-to-quiz">
             <i class="fa-solid fa-pencil fa-2xl"></i>
         </div>
     </header>
     <main>
-        <h3 id="main-subheading">Five rules on using the Spanish acento</h3>
         <button type="button" class="collapsible" id="Intro">A short introduction</button>
         <div class="content">
-            <p>All sorts of Spanish learners (at all levels) often confess to not being sure about the official rules on
-                when to use and when not to use the Spanish acento («<strong>´</strong>») in writing. Many will say that
-                the issue doesn't really affect them as they have developed a good instinctive feel for identifying
-                where to put it and where not to put it down on the page. And of course, if that's the case, then
-                there's no problem! But some learners will admit to being a little unsure.</p>
+            <p>All sorts of Spanish learners (at all levels) often confess to not being <em>entirely</em> sure about the
+                official rules on
+                when to use and when not to use the Spanish <em>acento</em> («<sub><strong>´</strong></sub>») in writing.</p>
 
             <p>If you're one such Spanish learner, this site is for you! We aim to help remove any uncertainty in your
-                mind by explaining the rules simply and clearly and then giving you the opportunity to practice what
+                mind by explaining the rules simply and clearly and by giving you the opportunity to practice what
                 you've learned.</p>
-
-            <p>Of course, to apply these rules properly, you'll first need to know where to put the stress when saying a
-                word aloud, but that's another part of the language learning task. We leave that up to you, though we
-                recommend that whatever method you choose to learn your Spanish vocabulary you should repeatedly say new
-                words out loud until you're comfortable you're pronouncing them correctly.</p>
         </div>
-
-        <button type="button" class="collapsible" id="what-its-for">What's the acento there for anyway?</button>
+        <button type="button" class="collapsible" id="what-its-for">What's the <em>acento</em> there for anyway?</button>
         <div class="content">
-            <p>There are three purposes to the written acento.</p>
+            <p>There are three purposes to the written <em>acento</em>.</p>
             <ul>
-                <li>It's first and main purpose is to indicate to a reader what syllable to put the stress on a word
-                    when speaking it. The general rules of pronunciation of Spanish will usually tell you without the
-                    need for an acento, but sometimes it won't; and in such cases you'll need to write your acento on
-                    the page (Lessons 1 to 3).
-                </li>
-                <li>Another purpose is to tell certain words that are pronounced the same
-                    (and are otherwise spelt the same) apart from one another. (Lesson 4)</li>
-                <li>Finally, in cases where a word contains two or three vowels in succession, a written acento may be
-                    needed
-                    to
-                    tell whether the vowels should be pronounced as a single syllable (i.e. as a dipthong or a
-                    tripthong)
-                    or broken up into several syllables. (Lesson 5)</li>
+                <li>To indicate to a reader what syllable to put the stress on a word if it doesn't conform to the
+                    general rules of pronunciation in Spanish. (Lessons 1 to 3)</li>
+                <li>To distinguish certain words that are pronounced the same one another. (Lesson 4)</li>
+                <li>In words containing two or three vowels in succession, to tell whether the vowels should compressed
+                    into a single syllable or broken up into several. (Lesson 5)</li>
             </ul>
         </div>
 
         <button type="button" class="collapsible" id="How-to-use">How to use this site</button>
         <div class="content">
-
-            Directly below this short introduction you'll find five boxes, each of which will take you to an explanation
-            of one
-            of five aspects of the relevant rule. If you click or tap on any of them, you be given the option of either
-            opening a pop-up box
-            containing a short reminder list of the main points of the rule or navigating to a detailed explanation.
-
-            The site also contains a couple of quizzes for you to practice what you've learned here. There is a Quiz
-            icon <i class="fa-solid fa-pencil"></i> at the top right-hand-side of the site, which you can click to
-            choose which of the quizzes you want to
-            do. You
-            can choose between a quick test on the grammatical rules themselves and a longer battery of questions to
-            check how well you
-            can apply the rules.
+            Directly below this short introduction you'll find links to the five lessons, each with a link to a bullet
+            point summary of the relevant rules.
+            The site also provides a quiz for you to practice what you've learned here. The Quiz icon (<i
+                class="fa-solid fa-pencil"></i>) at the top right-hand-side of the screen takes you directly to the
+            quiz. You can also simply scroll down to it at the very end of the page.
         </div>
-
-        <button type="button" class="collapsible" id="terminology">A quick word on terminology</button>
-        <div class="content">
-            <p>Many Spanish materials speak of the acento as a "tilde" (one of the two forms of tilde used in the
-                Spanish
-                language, the other one being the '~' found on top of the 'n' shape to form the letter 'ñ'). As most
-                Spanish
-                schoolchildren will spell out a word using the word 'acento' to indicate the written mark, we do the
-                same to
-                avoid confusion. It's worth remembering, though, that the acento is often referred to as the 'tilde' in
-                serious articles
-                on the
-                Spanish language.</p>
-
-        </div>
-
         <div id="lessons-container">
             <div class="link-to-lesson" id="lesson1">
-                <div class="link-to-full"><i class="fa-solid fa-person-chalkboard fa-xl"></i></div>
-                <div class="lesson-name"> Lesson One &mdash; <em>palabras agudas</em> </div>
+                <div class="lesson-name">
+                    <h4> Lesson One &mdash; <em>palabras agudas</em> </h4>
+                </div>
                 <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
             </div>
-        </div>
-        <div class="full-lesson">
-            <p>Don't put a written accent on word whose stress is on their last syllable (the Real Academia de la
-                Lengua Espanola call them "palabras agudas") unless they end with
-                a consonant other than <em>n</em> or <em>s</em>.</p>
+            <div class="full-lesson">
+                <p>Don't put a written accent on word whose stress is on their last syllable (the Real Academia de la
+                    Lengua Espanola call them "palabras agudas") unless they end with
+                    a consonant other than <em>n</em> or <em>s</em>.</p>
 
-            <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written accent
-                on the stressed
-                vowel.</p>
+                <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written accent
+                    on the stressed
+                    vowel.</p>
 
-            <h3>Examples:</h3>
-            <ul>
-                <li>
-                    comer
-                </li>
-                <li>
-                    profesor
-                </li>
-                <li>
-                    Madrid
-                </li>
-                <li>
-                    animal
-                </li>
-            </ul>
-
-
-            <h4>BUT</h4>
-
-            <ul>
-                <li>
-                    comió
-                </li>
-                <li>
-                    será
-                </li>
-                <li>
-                    comilón
-                </li>
-                <li>
-                    organización
-                </li>
-                <li>
-                    aquí
-                </li>
-                <li>
-                    estás
-                </li>
-                <li>
-                    mamá
-                </li>
-                <li>
-                    sofás
-                </li>
-            </ul>
-            <button class="spot-check" id="spot-btn-lesson1"><i class="fa-solid fa-check-double fa-2xl"></i></button>
-        </div>
-        <div class="summary">
-            <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
-            <p>they end with a consonant other than n or s</p>
-            <p>otherwise they do</p>
-        </div>
-        <div class="link-to-lesson" id="Lesson2"><i class="fa-solid fa-person-chalkboard fa-xl"></i> Lesson Two &mdash;
-            <em>palabras llanas</em> <i class="fa-solid fa-list-check fa-xl"></i>
-        </div>
-        <div class="full-lesson">
-            <p>With words that have their stress on their second to last syllable (The Real Academia call these ones
-                "palabras graves" or "palabras llanas"), the rule is the other way around:
-                they <em>should</em> be given a written accent if they end with a consonant other than <em>n</em> or
-                <em>s</em>. And
-                if they end with an <em>n</em>, an <em>s</em> or a vowel, then you <em>shouldn't</em> mark the
-                stress in writing.
-            </p>
-
-            <h3>Examples:</h3>
-            <ul>
-                <li>
-                    azúcar
-                </li>
-                <li>
-                    lápiz
-                </li>
-                <li>
-                    cárcel
-                </li>
-                <li>
-                    fútbol
-                </li>
-            </ul>
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        comer
+                    </li>
+                    <li>
+                        profesor
+                    </li>
+                    <li>
+                        Madrid
+                    </li>
+                    <li>
+                        animal
+                    </li>
+                </ul>
 
 
-            <h4>BUT</h4>
+                <h4>BUT</h4>
 
-            <ul>
-                <li>
-                    barco
-                </li>
-                <li>
-                    cama
-                </li>
-                <li>
-                    dinero
-                </li>
-                <li>
-                    naranjas
-                </li>
-                <li>
-                    galleta
-                </li>
-                <li>
-                    alguien
-                </li>
-                <li>
-                    terminan
-                </li>
-                <li>
-                    Carmen
-                </li>
-            </ul>
-
-            <p>There is, however, <em></em>an exception</em> you'll probably need to remember: with palabras llanas
-                that end with <em>n</em> or <em>s</em>, if the <em>n</em> or <em>s</em> is
-                preceded by a consonant, then you'll need to mark the stressed syllable with a written accent after
-                all.</p>
-            <p>This often affects words with a recent origin in a foreign language (or Latin).</p>
-
-            <h3>For example:</h3>
-            <ul>
-                <li>bíceps/li>
-                <li>wéstern</li>
-                <li>cómics</li>
-            </ul>
-            <button class="spot-check" id="spot-btn-lesson2"><i class="fa-solid fa-check-double fa-2xl"></i></button>
-            <div class="summary">need
-                <p>Palabras agudas <strong>need</strong> acentos if:</p>
+                <ul>
+                    <li>
+                        comió
+                    </li>
+                    <li>
+                        será
+                    </li>
+                    <li>
+                        comilón
+                    </li>
+                    <li>
+                        organización
+                    </li>
+                    <li>
+                        aquí
+                    </li>
+                    <li>
+                        estás
+                    </li>
+                    <li>
+                        mamá
+                    </li>
+                    <li>
+                        sofás
+                    </li>
+                </ul>
+                <button class="spot-check" id="spot-btn-lesson1"><i
+                        class="fa-solid fa-check-double fa-2xl"></i></button>
+            </div>
+            <div class="summary">
+                <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
                 <p>they end with a consonant other than n or s</p>
-                <p>otherwise they don't</p>
-                <p>Exception: if the last letter is n or s and the second-last letter is a consonant, they need an
-                    acento on the second-last syllable</p>
+                <p>otherwise they do</p>
+            </div>
+            <div class="link-to-lesson" id="Lesson2">
+                <div class="lesson-name">
+                    <h4> Lesson Two &mdash; <em>palabras llanas</em> </h4>
+                </div>
+                <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+            </div>
+            <div class="full-lesson">
+                <p>With words that have their stress on their second to last syllable (The Real Academia call these ones
+                    "palabras graves" or "palabras llanas"), the rule is the other way around:
+                    they <em>should</em> be given a written accent if they end with a consonant other than <em>n</em> or
+                    <em>s</em>. And
+                    if they end with an <em>n</em>, an <em>s</em> or a vowel, then you <em>shouldn't</em> mark the
+                    stress in writing.
+                </p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        azúcar
+                    </li>
+                    <li>
+                        lápiz
+                    </li>
+                    <li>
+                        cárcel
+                    </li>
+                    <li>
+                        fútbol
+                    </li>
+                </ul>
+
+
+                <h4>BUT</h4>
+
+                <ul>
+                    <li>
+                        barco
+                    </li>
+                    <li>
+                        cama
+                    </li>
+                    <li>
+                        dinero
+                    </li>
+                    <li>
+                        naranjas
+                    </li>
+                    <li>
+                        galleta
+                    </li>
+                    <li>
+                        alguien
+                    </li>
+                    <li>
+                        terminan
+                    </li>
+                    <li>
+                        Carmen
+                    </li>
+                </ul>
+
+                <p>There is, however, <em>an exception</em> you'll probably need to remember: with palabras llanas
+                    that end with <em>n</em> or <em>s</em>, if the <em>n</em> or <em>s</em> is
+                    preceded by a consonant, then you'll need to mark the stressed syllable with a written accent after
+                    all.</p>
+                <p>This often affects words with a recent origin in a foreign language (or Latin).</p>
+
+                <h3>For example:</h3>
+                <ul>
+                    <li>bíceps/li>
+                    <li>wéstern</li>
+                    <li>cómics</li>
+                </ul>
+                <button class="spot-check" id="spot-btn-lesson2"><i
+                        class="fa-solid fa-check-double fa-2xl"></i></button>
+            </div>
+            <div class="summary">
+                <p>Palabras llanas <strong>need</strong> acentos if:</p>
+                <p>they end with a consonant other than n or s</p>
+                <p>otherwise they don't need them</p>
+                <p>Exception: if the last letter is "n" or s and the second-last letter is a consonant, they need an
+                    acento on the second-last syllable ("wéstern")</p>
+            </div>
+
+            <div class="link-to-lesson" id="Lesson3">
+                <div class="lesson-name">
+                    <h4> Lesson Three &mdash; <em>palabras esdrújulas</em> etc. </h4>
+                </div>
+                <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+            </div>
+            <div class="full-lesson">
+                <p>Words with a stress on their third from last syllable (called "palabras esdrújulas" by the Real
+                    Academia) always have a written accent.</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        guapísimo
+                    </li>
+                    <li>
+                        pájaro
+                    </li>
+                    <li>
+                        célula
+                    </li>
+                    <li>
+                        esdrújula
+                    </li>
+                </ul>
+
+                <p>Words with the stress before the third-last syllable (palabras sobreesdrújulas) also need their
+                    stressed
+                    syllable to be marked with a written accent.</p>
+
+                <p>As always, though, (¿cómo no?) there is an exception. Luckily for us, it's pretty easy to remember:
+                    adverbs ending with <em>-mente</em> don't need a written accent unless the adjective that forms
+                    their root needs one. Effectively what the rule means is that you should add -mente as required by
+                    the applicable rules,
+                    leaving any written accent that was already on the root untouched.</p>
+                <h5>SO ...</h5>
+
+                <ul>
+                    <li>
+                        velozmente
+                    </li>
+                    <li>
+                        claramente
+                    </li>
+                </ul>
+
+                <h5>BUT ...</h5>
+                <ul>
+                    <li>
+                        simpáticamente (because <em>simpática</em> &ndash; as a palabra esdrújula &ndash; already has an
+                        accent!)
+                    </li>
+                    <li>
+                        útilmente (because, útil &ndash; as a palabra llana ending with a consonant other than n or s
+                        &ndash; already
+                        has an accent!)
+                    </li>
+                    <li>
+                        cortésmente (because, cortés &ndash; as a palabra aguda ending with an s &ndash; already needs
+                        an accent!)
+                    </li>
+                </ul>
+                <button class="spot-check" id="spot-btn-lesson3"><i
+                        class="fa-solid fa-check-double fa-2xl"></i></button>
+            </div>
+            <div class="summary">
+                <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
+                <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
+            </div>
+            <div class="link-to-lesson" id="Lesson4">
+                <div class="lesson-name">
+                    <h4> Lesson Four &mdash; <em>distinguishing homonyms</em> </h4>
+                </div>
+                <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+            </div>
+            <div class="full-lesson">
+                <p>Some very commonly used (and mostly short) words have a written accent when used in one sense and
+                    have none when used in another.</p>
+
+                <p>The following are some of the most common ones:</p>
+
+                <h3>Examples:</h3>
+                <ul>
+                    <li>
+                        dé (from the verb dar) vs. de (of)
+                    </li>
+                    <li>
+                        sé (from the verb ser) vs. se (reflexive pronoun)
+                    </li>
+                    <li>
+                        él (as a pronoun) vs. el (the definite article)
+                    </li>
+                    <li>
+                        tú (you) vs tu (your)
+                    </li>
+                    <li>
+                        mí (me) vs mi (my)
+                    </li>
+                    <li>
+                        té (tea) vs. te (you)
+                    </li>
+                    <li>
+                        qué (as a question word &ndash; in direct or indirect questions) vs. que (as a relative pronoun)
+                    </li>
+                    <li>
+                        quién/quiénes (as a question word) vs. quien/quienes (as a relative pronoun)
+                    </li>
+                    <li>
+                        cuándo vs. cuando (see above)
+                    </li>
+                    <li>
+                        cuánto/cuántos vs. cuanto/cuandos<br>
+                        cuánta/cuántas vs. cuanta/cuantas (see above)
+                    </li>
+                    <li>
+                        cuál/cuáles vs. cual/cuales (see above)
+                    </li>
+                    <li>
+                        por qué vs. porque (see above)
+                    </li>
+                    <li>
+                        cómo vs. como (like, as in similar to)
+                    </li>
+                    <li>
+                        más (more) vs. mas (but)
+                    </li>
+                    <li>
+                        solo (alone) vs. sólo (only)
+                    </li>
+                    <li>
+                        sí (yes) vs. si (if)
+                    </li>
+                    <li>
+                    aún (still, even) vs. aun (despite)
+                    </li>
+                </ul>
+                <button class="spot-check" id="spot-btn-lesson4"><i
+                        class="fa-solid fa-check-double fa-2xl"></i></button>
+            </div>
+            <div class="summary">
+                <p>Question words need acentos</p>
+                <p>Pronouns need acentos if they have homophones meaning something different.</p>
+                <p>You need to remember the other words that have acentos to distinguish them from their homophones.</p>
+            </div>
+            <div class="link-to-lesson" id="Lesson5">
+                <div class="lesson-name">
+                    <h4> Lesson Five &mdash; <em>Dipthongs, tripthongs and hiatuses</em> </h4>
+                </div>
+                <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                <div class="full-lesson">
+                    <p>The first thing to say under this category is that dipthongs and tripthongs follow the same rules
+                        about
+                        when to add a written acento as any other vowels. But when there are two or three vowels written
+                        one
+                        after another, on which of them do you put the acento?</p>
+                    <p>Well the key to this problem lies in remembering that Spanish grammaticians split the vowels into
+                        strong
+                        ones (a, e and o) and weak ones (i and u).</p>
+                    <p>Dipthongs are always either a combination of two weak vowels or of one weak and one strong vowel.
+                        Two
+                        strong vowels written together are always pronounced as two separate syllables (sea).</p>
+                    <p>Tripthongs are always a combination of weak-strong-weak vowels. Any other combination of three
+                        vowels
+                        together will automatically be spoken using at least two syllables.</p>
+                    <p>So (brace yourself!), the rules on where to put your acento, if one is needed, are as follows:
+                    </p>
+                    <ul>
+                        <li>in dipthongs with two weak vowels, put the acento on the second of them (veintiún)</li>
+                        <li>in dipthongs with one weak and one strong vowel, put the acento on the strong one
+                            (com-<strong>ió</strong>)</li>
+                        <li>in tripthongs, put the acento on the strong vowel, which will always be in the middle
+                            (com-<strong>iáis</strong>)</li>
+                        <li>if you place an acento anywhere else, it will <ol>
+                                <li>break the combination into two syllables</li>
+                                <li>put the word's stress on the syllable you've marked with the acento
+                                    (sa-<strong>lí</strong>-ais)</li>
+                            </ol>
+                        </li>
+                    </ul>
+                    <button class="spot-check" id="spot-btn-lesson5"><i
+                            class="fa-solid fa-check-double fa-2xl"></i></button>
+                </div>
+                <div class="summary">
+                    <p>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as any other
+                        vowels.
+                    </p>
+                    <p>Dipthong two weak vowels: acento (where needed) on second vowel</p>
+                    <p>Otherwise put the acento (where needed) on the strong vowel.</p>
+                    <p>Stressed tripthongs always have their acento (where needed) on the strong vowel</p>
+                    <p>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables</p>
+                </div>
             </div>
         </div>
-
-        <div class="link-to-lesson" id="Lesson3"><i class="fa-solid fa-person-chalkboard fa-xl"></i> Lesson Three
-            &mdash; <em>palabras esdrújulas</em> and
-            <em>sobreesdrújulas</em> <i class="fa-solid fa-list-check fa-xl"></i>
-        </div>
-        <div class="full-lesson">
-            <p>Words with a stress on their third from last syllable (called "palabras esdrújulas" by the Real
-                Academia) always have a written accent.</p>
-
-            <h3>Examples:</h3>
-            <ul>
-                <li>
-                    guapísimo
-                </li>
-                <li>
-                    pájaro
-                </li>
-                <li>
-                    célula
-                </li>
-                <li>
-                    esdrújula
-                </li>
-            </ul>
-
-            <p>Words with the stress before the third-last syllable (palabras sobreesdrújulas) also need their
-                stressed
-                syllable to be marked with a written accent.</p>
-
-            <p>As always, though, (¿cómo no?) there is an exception. Luckily for us, it's pretty easy to remember:
-                adverbs ending with <em>-mente</em> don't need a written accent unless the adjective that forms
-                their root needs one. Effectively what the rule means is that you should add -mente as required by
-                the applicable rules,
-                leaving any written accent that was already on the root untouched.</p>
-            <h5>SO ...</h5>
-
-            <ul>
-                <li>
-                    velozmente
-                </li>
-                <li>
-                    claramente
-                </li>
-            </ul>
-
-            <h5>BUT ...</h5>
-            <ul>
-                <li>
-                    simpáticamente (because <em>simpática</em> &ndash; as a palabra esdrújula &ndash; already has an
-                    accent!)
-                </li>
-                <li>
-                    útilmente (because, útil &ndash; as a palabra llana ending with a consonant other than n or s
-                    &ndash; already
-                    has an accent!)
-                </li>
-                <li>
-                    cortésmente (because, cortés &ndash; as a palabra aguda ending with an s &ndash; already needs
-                    an accent!)
-                </li>
-            </ul>
-            <button class="spot-check" id="spot-btn-lesson3"><i class="fa-solid fa-check-double fa-2xl"></i></button>
-        </div>
-        <div class="summary">
-            <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
-            <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
-        </div>
-        <div class="link-to-lesson" id="Lesson4"><i class="fa-solid fa-person-chalkboard fa-xl"></i> Lesson Four &mdash;
-            <em>distinguishing homonyms</em> <i class="fa-solid fa-list-check fa-xl"></i>
-        </div>
-        <div class="full-lesson">
-            <p>Some very commonly used (and mostly short) words have a written accent when used in one sense and
-                have none when used in another.</p>
-
-            <p>The following are some of the most common ones:</p>
-
-            <h3>Examples:</h3>
-            <ul>
-                <li>
-                    dé (from the verb dar) vs. de (of)
-                </li>
-                <li>
-                    sé (from the verb ser) vs. se (reflexive pronoun)
-                </li>
-                <li>
-                    él (as a pronoun) vs. el (the definite article)
-                </li>
-                <li>
-                    tú (you) vs tu (your)
-                </li>
-                <li>
-                    mí (me) vs mi (my)
-                </li>
-                <li>
-                    té (tea) vs. te (you)
-                </li>
-                <li>
-                    qué (as a question word &ndash; in direct or indirect questions) vs. que (as a relative pronoun)
-                </li>
-                <li>
-                    quién/quiénes (as a question word) vs. quien/quienes (as a relative pronoun)
-                </li>
-                <li>
-                    cuándo vs. cuando (see above)
-                </li>
-                <li>
-                    cuánto/cuántos vs. cuanto/cuandos<br>
-                    cuánta/cuántas vs. cuanta/cuantas (see above)
-                </li>
-                <li>
-                    cuál/cuáles vs. cual/cuales (see above)
-                </li>
-                <li>
-                    por qué vs. porque (see above)
-                </li>
-                <li>
-                    cómo vs. como (like, as in similar to)
-                </li>
-                <li>
-                    más (more) vs. mas (but)
-                </li>
-                <li>
-                    solo (alone) vs. sólo (only)
-                </li>
-                <li>
-                    sí (yes) vs. si (if)
-                </li>
-                li>
-                aún (still, even) vs. aun (despite)
-                </li>
-            </ul>
-            <button class="spot-check" id="spot-btn-lesson4"><i class="fa-solid fa-check-double fa-2xl"></i></button>
-        </div>
-        <div class="summary">
-            <p>Question words need acentos</p>
-            <p>Pronouns need acentos if they have homophones meaning something different.</p>
-            <p>You need to remember the other words that have acentos to distinguish them from their homophones.</p>
-        </div>
-        <div class="link-to-lesson" id="Lesson5"><i class="fa-solid fa-person-chalkboard fa-xl"></i> Lesson Five &mdash;
-            <em>Dipthongs, tripthongs and hiatuses</em> <i class="fa-solid fa-list-check fa-xl"></i>
-            <div class="full-lesson"></div>
-            <p>The first thing to say under this category is that dipthongs and tripthongs follow the same rules about
-                when to add a written acento as any other vowels. But when there are two or three vowels written one
-                after another, on which of them do you put the acento?</p>
-            <p>Well the key to this problem lies in remembering that Spanish grammaticians split the vowels into strong
-                ones (a, e and o) and weak ones (i and u).</p>
-            <p>Dipthongs are always either a combination of two weak vowels or of one weak and one strong vowel. Two
-                strong vowels written together are always pronounced as two separate syllables (sea).</p>
-            <p>Tripthongs are always a combination of weak-strong-weak vowels. Any other combination of three vowels
-                together will automatically be spoken using at least two syllables.</p>
-            <p>So (brace yourself!), the rules on where to put your acento, if one is needed, are as follows:</p>
-            <ul>
-                <li>in dipthongs with two weak vowels, put the acento on the second of them (veintiún)</li>
-                <li>in dipthongs with one weak and one strong vowel, put the acento on the strong one
-                    (com-<strong>ió</strong>)</li>
-                <li>in tripthongs, put the acento on the strong vowel, which will always be in the middle
-                    (com-<strong>iáis</strong>)</li>
-                <li>if you place an acento anywhere else, it will <ol>
-                        <li>break the combination into two syllables</li>
-                        <li>put the word's stress on the syllable you've marked with the acento
-                            (sa-<strong>lí</strong>-ais)</li>
-                    </ol>
-                </li>
-            </ul>
-            <button class="spot-check" id="spot-btn-lesson5"><i class="fa-solid fa-check-double fa-2xl"></i></button>
-        </div>
-        <div class="summary">
-            <p>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as any other vowels.
-            </p>
-            <p>Dipthong two weak vowels: acento (where needed) on second vowel</p>
-            <p>Otherwise put the acento (where needed) on the strong vowel.</p>
-            <p>Stressed tripthongs always have their acento (where needed) on the strong vowel</p>
-            <p>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables</p>
-        </div>
-
-        </div>
-
+        <h2 class="quiz-title">Revision Quiz</h2>
         <div id="question-container">
             <div class="question">
                 <p id="question-text"></p>
@@ -444,13 +428,26 @@
         </div>
     </main>
     <footer>
-
+        <ul id="social-networks">
+            <li><a href="https://www.facebook.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Facebook page (opens in new browser tab)"><i
+                        class="fa-brands fa-facebook"></i></a></li>
+            <li><a href="https://www.twitter.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our twitter timeline (opens in new browser tab)"><i
+                        class="fa-brands fa-x-twitter"></i></a></li>
+            <li><a href="https://www.youtube.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our youtube channel (opens in new browser tab)"><i
+                        class="fa-brands fa-youtube"></i></a></li>
+            <li><a href="https://www.instagram.com/" target="_blank" rel="noopener"
+                    aria-label="Visit our Instagram page (opens in new browser tab)"><i
+                        class="fa-brands fa-instagram"></i></a></li>
+        </ul>
+        <a href="imprimatur.html" class="footer-link text-grow">Imprimatur</a>
     </footer>
-    <script src="assets/js/scripts.js"></script>
 
+    <script src="assets/js/scripts.js"></script>
     <!-- font awsome script -->
     <script src="https://kit.fontawesome.com/c92ad0e9bd.js" crossorigin="anonymous"></script>
-
 </body>
 
 </html>
