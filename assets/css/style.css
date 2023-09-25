@@ -7,12 +7,13 @@
     box-sizing: border-box;
 }
 
-html { 
-    background: url(../images/alhambra.webp) no-repeat center fixed;     
+html {
+    background: url(../images/alhambra.webp) no-repeat center fixed;
     background-size: cover;
 }
 
 body {
+    top: 40px;
     display: flex;
     flex-direction: column;
     min-height: 100%;
@@ -20,14 +21,15 @@ body {
     background: #f7eedd;
     color: #5e463c;
     margin: auto;
-    align-content: center;
+    align-items: center;
+    justify-content: center;
     font-family: 'Montserrat', sans-serif;
-      
+
 }
 
 h1,
 h2,
-h3  {
+h3 {
     display: block;
     margin: 0 10px;
 }
@@ -35,7 +37,7 @@ h3  {
 h1 {
     font-size: 1.17em;
     font-weight: bold;
-    color:#5e463c;
+    color: #5e463c;
 }
 
 h2 {
@@ -47,28 +49,29 @@ h3 {
 }
 
 a:link {
-    color: #fabe00;;
+    color: #fabe00;
+    ;
     background-color: transparent;
     text-decoration: none;
-  }
-  
-  a:visited {
+}
+
+a:visited {
     color: #eed090;
     background-color: transparent;
     text-decoration: none;
-  }
-  
-  a:hover {
+}
+
+a:hover {
     color: #f2f3ae;
     background-color: transparent;
     text-decoration: underline;
-  }
-  
-  a:active {
+}
+
+a:active {
     color: #f7eedd;
     background-color: transparent;
     text-decoration: underline;
-  }
+}
 
 
 /** Header **/
@@ -133,8 +136,59 @@ main {
     align-self: center;
 }
 
+.summaryModal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 20px;
+    top: 130px;
+    width: fit-content;
+    max-width: 320px;
+    height: fit-content;
+    overflow: auto;
+    background-color: rgba(242, 243, 174, .9);
+    color: #5e463c;
+    padding: 15px 15px 15px 30px;
+
+    /* Black w/ opacity */
+}
+
+
+.summaryModal li {
+    list-style-type: square;
+}
+
 
 /** Quiz section **/
+#start-quiz {
+    border: solid 8px;
+    border-bottom: solid 3px;
+    border-radius: 8px;
+    color: #5e463c;
+    background-color: #eed090;
+    border-color: #fabe00;
+    width: fit-content;
+    margin: auto;
+    margin-bottom: 30px;
+    box-shadow: 6px 6px 2px #5e463c;
+}
+
+#start-quiz-btn {
+    margin: 25px;
+    width: fit-content;
+    text-align: center;
+    font-size: 180%;
+    font-weight: 700;
+    color: inherit;
+    background-color: inherit;
+    border: none;
+}
+
+#quiz-title {
+    display: grid;
+    text-align: center;
+}
+
 #question-container {
     display: flex;
     flex-direction: column;
@@ -142,21 +196,32 @@ main {
 }
 
 #question-text {
-    padding: 10px 20px;
+    margin: 10px 20px;
+    text-align: center;
 }
 
 #answer-options {
+    margin: 5% 10px;
     display: flex;
     flex-direction: row;
-    align-content: space-around;
     justify-content: space-evenly;
 }
 
 .answer-option {
     background-color: #f0f8ff;
     padding: 10px 1rem;
-    max-width: 60px;
-    box-shadow: 1px 1px 1px #5e463c;
+    width: fit-content;
+    border-radius: 4px;
+    box-shadow: 2px 2px 1px #5e463c;
+}
+
+#quiz-score {
+    display: block;
+}
+
+#running-total {
+    margin: 10px 20px;
+    text-align: center;
 }
 
 .answer-correct {
@@ -189,12 +254,8 @@ main {
     width: 40vw;
     justify-content: center;
     align-content: center;
-    
-    box-shadow: 6px 2px 2px #5e463c;
-}
-
-.summary {
-    display: none;
+    border-radius: 6px;
+    box-shadow: 6px 6px 2px #5e463c;
 }
 
 .collapsible {
@@ -208,6 +269,7 @@ main {
     text-align: center;
     box-shadow: 2px 2px 1px #5e463c;
 }
+
 .content p {
     margin: 10px 10px;
 }
@@ -241,27 +303,25 @@ main {
 
 .link-to-full,
 .link-to-summary {
-    padding: 3px 0;
+    margin: 15px 5px;
 }
 
-  #quiz-title {
-    text-align: center;
-  }
 
-  /* footer styling  */
+/* footer styling  */
 footer {
     position: sticky;
     top: 100vh;
     text-align: center;
-    padding: 20px 0;
+    padding: 20px 5px;
     display: flex;
     flex-wrap: nowrap;
     padding: 10px;
     bottom: 0;
     width: 100%;
     max-width: 1200px;
-    background-color: #ecd9b1;
-    box-shadow: 0px -2px 4px  #5e463c;
+    color: #ffe9c7;
+    background-color: #5e463c;
+    box-shadow: 0px -2px 4px #5e463c;
 }
 
 footer>ul#social-networks {
@@ -274,21 +334,21 @@ footer>ul#social-networks {
 }
 
 ul#social-networks a {
-    color: #5e463c;
+    color: #ffe9c7;
 }
 
 
 /* imprimatur */
-.footer-link {
+footer:link {
     margin: 0 10px;
     font-size: 16px;
-    color: #5e463c;
+    background-color: #5e463c;
+    color: #ffe9c7;
     text-decoration: none;
     font-weight: 600;
 }
 
-/* Style info text */
-
+/* Info text */
 .blurb-heading {
     letter-spacing: 1px;
     margin: 20px 0;
@@ -309,8 +369,8 @@ ul#social-networks a {
 }
 
 /* blurb text */
- .legal-blurb p,
- .legal-blurb h3 {
+.legal-blurb p,
+.legal-blurb h3 {
     max-width: 450px;
 }
 
@@ -324,14 +384,14 @@ ul#social-networks a {
     margin: 8px 0;
 }
 
- .legal-blurb h3 {
+.legal-blurb h3 {
     text-align: center;
     margin: 20px 0 10px;
 }
 
 .legal-blurb a {
-        background-color: transparent;
-        text-decoration: none;
+    background-color: transparent;
+    text-decoration: none;
 }
 
 address {

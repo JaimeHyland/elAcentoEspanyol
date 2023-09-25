@@ -25,7 +25,7 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onLoad='fetchQuizFile()'>
+<body onLoad='fetchQuizFileAndHideQuiz();'>
     <content class="content-wrapper">
         <header>
             <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo">
@@ -81,9 +81,9 @@
                     <div class="lesson-name">
                         <h4> Lesson One &mdash; <em>palabras agudas</em> </h4>
                     </div>
-                    <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                    <div class="link-to-summary" id="summary-1"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="full-lesson">
+                <div class="full-lesson" id="full1">
                     <p>Don't put a written accent on word whose stress is on their last syllable (the Real Academia de
                         la
                         Lengua Espanola call them "palabras agudas") unless they end with
@@ -142,7 +142,7 @@
                     <button class="spot-check" id="spot-btn-lesson1"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summary">
+                <div class="summaryModal" id="summary1">
                     <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
                     <p>they end with a consonant other than n or s</p>
                     <p>otherwise they do</p>
@@ -151,9 +151,9 @@
                     <div class="lesson-name">
                         <h4> Lesson Two &mdash; <em>palabras llanas</em> </h4>
                     </div>
-                    <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                    <div class="link-to-summary" id="summary-2"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="full-lesson">
+                <div class="full-lesson" id="full2">
                     <p>With words that have their stress on their second to last syllable (The Real Academia call these
                         ones
                         "palabras graves" or "palabras llanas"), the rule is the other way around:
@@ -226,7 +226,7 @@
                     <button class="spot-check" id="spot-btn-lesson2"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summary">
+                <div class="summaryModal" id="summary2">
                     <p>Palabras llanas <strong>need</strong> acentos if:</p>
                     <p>they end with a consonant other than n or s</p>
                     <p>otherwise they don't need them</p>
@@ -234,13 +234,13 @@
                         acento on the second-last syllable ("wéstern")</p>
                 </div>
 
-                <div class="link-to-lesson" id="Lesson3">
+                <div class="link-to-lesson" id="Lesson-3">
                     <div class="lesson-name">
                         <h4> Lesson Three &mdash; <em>palabras esdrújulas</em> etc. </h4>
                     </div>
-                    <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                    <div class="link-to-summary" id="summary-3"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="full-lesson">
+                <div class="full-lesson" id="full-3">
                     <p>Words with a stress on their third from last syllable (called "palabras esdrújulas" by the Real
                         Academia) always have a written accent.</p>
 
@@ -304,7 +304,7 @@
                     <button class="spot-check" id="spot-btn-lesson3"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summary">
+                <div class="summaryModal" id="summary3">
                     <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
                     <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
                 </div>
@@ -312,9 +312,9 @@
                     <div class="lesson-name">
                         <h4> Lesson Four &mdash; <em>distinguishing homonyms</em> </h4>
                     </div>
-                    <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                    <div class="link-to-summary" id="summary-4"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="full-lesson">
+                <div class="full-lesson" id="full4">
                     <p>Some very commonly used (and mostly short) words have a written accent when used in one sense and
                         have none when used in another.</p>
 
@@ -379,7 +379,7 @@
                     <button class="spot-check" id="spot-btn-lesson4"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summary">
+                <div class="summaryModal" id="summary4">
                     <p>Question words need acentos</p>
                     <p>Pronouns need acentos if they have homophones meaning something different.</p>
                     <p>You need to remember the other words that have acentos to distinguish them from their homophones.
@@ -387,10 +387,10 @@
                 </div>
                 <div class="link-to-lesson" id="Lesson5">
                     <div class="lesson-name">
-                        <h4> Lesson Five &mdash; <em>Dipthongs, tripthongs and hiatuses</em> </h4>
+                        <h4> Lesson Five &mdash; <em>Dipthongs, tripthongs &amp; hiatuses</em> </h4>
                     </div>
-                    <div class="link-to-summary"><i class="fa-solid fa-list-check fa-xl"></i></div>
-                    <div class="full-lesson">
+                    <div class="link-to-summary" id="summary-5"><i class="fa-solid fa-list-check fa-xl"></i></div>
+                    <div class="full-lesson" id="full5">
                         <p>The first thing to say under this category is that dipthongs and tripthongs follow the same
                             rules
                             about
@@ -429,19 +429,23 @@
                         <button class="spot-check" id="spot-btn-lesson5"><i
                                 class="fa-solid fa-check-double fa-2xl"></i></button>
                     </div>
-                    <div class="summary">
-                        <p>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as any
-                            other
-                            vowels.
-                        </p>
-                        <p>Dipthong two weak vowels: acento (where needed) on second vowel</p>
-                        <p>Otherwise put the acento (where needed) on the strong vowel.</p>
-                        <p>Stressed tripthongs always have their acento (where needed) on the strong vowel</p>
-                        <p>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables</p>
+                    <div class="summaryModal" id="summary5">
+                        <ul>
+                            <li>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as
+                                any other vowels.</li>
+                            <li>Dipthong with two weak vowels: acento (where needed) on second vowel</li>
+                            <li>Dipthongs never contain two strong vowels</li>
+                            <li>Otherwise put the acento (where needed) on the strong vowel.</li>
+                            <li>Stressed tripthongs always have their acento (where needed) on the strong vowel</li>
+                            <li>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables
+                            </li>
+                        </ul>
                     </div>
                 </div>
             </div>
-            <h2 class="quiz-title">Revision Quiz</h2>
+            <div id="start-quiz"><button type="button" id="start-quiz-btn" onclick="showHideQuiz()">Start revision
+                    quiz!</button></div>
+            <h2 id="quiz-title">Revision Quiz</h2>
             <div id="question-container">
                 <div class="question">
                     <p id="question-text"></p>
@@ -449,7 +453,7 @@
                 <div id="answer-options">
                 </div>
             </div>
-            <div class="score">
+            <div id="quiz-score">
                 <p id="running-total"></p>
             </div>
         </main>
