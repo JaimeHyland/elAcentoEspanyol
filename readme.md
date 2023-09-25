@@ -4,7 +4,7 @@
 
 ## Code Institute - First Milestone Project: Create an interactive and responsive front-end website according to UX principles with HTML, CSS and JavaScript technologies.
 
-![Image of the website on various screen sizes](assets/readme-assets/site-responsive.png)
+![Image of the website on various screen sizes](assets/readme-assets/screenselection.png)
 
 This website was originally developed to showcase my ability to design and create a responsive and interactive website involving the use of simply data structures.
 
@@ -68,7 +68,7 @@ This website was originally developed to showcase my ability to design and creat
 ## Introduction
 This website was prepared for presentation as my second portfolio project for my online course on web design using HTML, CSS and JavaScript technologies. This includes a requirement to ensure that the website functions correctly and looks professional and complete, but as my course is not in creative web design, I have spent less time and effort on finer aesthetic questions. As the project will be judged according to the criteria set out in the relevant assessment guide contained in the Code Institute LMS, I have tried to be guided by that document.
 
-**A live demo of the website, as deployed within github's hosting environment, can be found [here](https://jaimehyland.github.io/farming-futures/)**
+**A live demo of the website, as deployed within github's hosting environment, can be found [here](https://jaimehyland.github.io/elAcentoEspanyol/)**
 
 - - -
 

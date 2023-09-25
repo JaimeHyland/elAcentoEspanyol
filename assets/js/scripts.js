@@ -10,6 +10,8 @@ let quizStats = {
     started: false
 };
 
+
+let openModal; //only one modal may open at at time!
 let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd']];
 let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 
@@ -183,17 +185,20 @@ function setupSummaryLink() {
         let _idTo = _idFrom.replace(/-/g, '');
         hyperlinkDivs[i].innerHTML = `<a href='#${_idTo}'>${hyperlinkDivs[i].innerHTML}</a>`;
         targetDivs[i] = document.getElementById(_idTo);
-        console.log(hyperlinkDivs[i].innerHTML);
         hyperlinkDivs[i].onclick = function () {
             targetDivs[i].style.display = "block";
+            openModal=targetDivs[i];
+            console.log(openModal);
         };
     };
 }
 
 window.onclick = function (event) {
-    console.log("event.target: " + event.target);
-        if (event.target.id != "image_in_modal_div") {
-        targetDivs[i].style.display = "none";
+    console.log("event.target: " + event.target.innerHTML);
+        if (event.target.id != openModal) {
+            console.
+ //       openModal.style.display = "none";
+ //       openModal = undefined;
     }
 };
 

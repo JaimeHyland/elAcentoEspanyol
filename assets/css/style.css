@@ -153,6 +153,21 @@ main {
     /* Black w/ opacity */
 }
 
+/* Close Button on modal */
+.close {
+    color: #aaaaaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+  }
+  
+  .close:hover,
+  .close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+  }
+
 
 .summaryModal li {
     list-style-type: square;
