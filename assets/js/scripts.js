@@ -196,11 +196,10 @@ function setupSummaryLink() {
 window.onclick = function (event) {
     console.log("event.target: " + event.target.innerHTML);
         if (event.target.id != openModal) {
-            console.
  //       openModal.style.display = "none";
  //       openModal = undefined;
     }
-};
+}
 
 var collapsible = document.getElementsByClassName("collapsible");
 var i;
