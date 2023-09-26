@@ -1,6 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
 
-
 * {
     padding: 0;
     margin: 0;
@@ -130,13 +129,13 @@ main {
     max-width: 1200px;
 }
 
-#link-to-quiz {
+#link-to-info-modal {
     max-height: 60px;
     padding-right: 10px;
     align-self: center;
 }
 
-.summaryModal {
+.summary-modal {
     display: none;
     position: fixed;
     z-index: 1;
@@ -176,12 +175,11 @@ main {
 
 /** Quiz section **/
 #start-quiz {
-    border: solid 8px;
-    border-bottom: solid 3px;
+    border: solid 1px;
     border-radius: 8px;
     color: #5e463c;
     background-color: #eed090;
-    border-color: #fabe00;
+    border-color: #5e463c;
     width: fit-content;
     margin: auto;
     margin-bottom: 30px;
@@ -200,7 +198,7 @@ main {
 }
 
 #quiz-title {
-    display: grid;
+    display: block;
     text-align: center;
 }
 
@@ -211,6 +209,7 @@ main {
 }
 
 #question-text {
+    display: block;
     margin: 10px 20px;
     text-align: center;
 }

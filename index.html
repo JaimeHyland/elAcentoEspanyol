@@ -25,17 +25,17 @@
     <meta name="theme-color" content="#ffffff">
 </head>
 
-<body onLoad='fetchQuizFileAndHideQuiz();'>
+<body>
     <content class="content-wrapper">
         <header>
             <div id="icon"><img src="assets/images/tilde-arial-header.png" alt="The Spanish Accent logo">
             </div>
             <div id="header-text">
                 <h1 id="site-heading">El <em>acento</em> español</h1>
-                <p id="site-subheading">Five rules on using the<br><em>acento</em> in Spanish</p>
+                <p id="site-subheading">Five rules on using the <em>acento</em> in Spanish</p>
             </div>
-            <div id="link-to-quiz">
-                <i class="fa-solid fa-pencil fa-2xl"></i>
+            <div id="link-to-info-modal">
+                <a id="link-to-info-modal-a href="#How-to-use"><i class="fa-solid fa-circle-info fa-2xl"></i><a></a>
             </div>
         </header>
 
@@ -67,8 +67,8 @@
                 </ul>
             </div>
 
-            <button type="button" class="collapsible" id="How-to-use">How to use this site</button>
-            <div class="content">
+            <div class="summary-modal" id="How-to-use">
+                <h3>How to use this site</h3>
                 <p>Directly below this short introduction you'll find links to the five lessons, each with a link to a
                     bullet
                     point summary of the relevant rules.</p>
@@ -142,7 +142,7 @@
                     <button class="spot-check" id="spot-btn-lesson1"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summaryModal" id="summary1">
+                <div class="summary-modal" id="summary1">
                     <span class="close">&times;</span>
                     <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
                     <p>they end with a consonant other than n or s</p>
@@ -227,7 +227,7 @@
                     <button class="spot-check" id="spot-btn-lesson2"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summaryModal" id="summary2">
+                <div class="summary-modal" id="summary2">
                     <span class="close">&times;</span>
                     <p>Palabras llanas <strong>need</strong> acentos if:</p>
                     <p>they end with a consonant other than n or s</p>
@@ -306,7 +306,7 @@
                     <button class="spot-check" id="spot-btn-lesson3"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summaryModal" id="summary3">
+                <div class="summary-modal" id="summary3">
                     <span class="close">&times;</span>
                     <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
                     <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
@@ -382,7 +382,7 @@
                     <button class="spot-check" id="spot-btn-lesson4"><i
                             class="fa-solid fa-check-double fa-2xl"></i></button>
                 </div>
-                <div class="summaryModal" id="summary4">
+                <div class="summary-modal" id="summary4">
                     <span class="close">&times;</span>
                     <p>Question words need acentos</p>
                     <p>Pronouns need acentos if they have homophones meaning something different.</p>
@@ -433,7 +433,7 @@
                         <button class="spot-check" id="spot-btn-lesson5"><i
                                 class="fa-solid fa-check-double fa-2xl"></i></button>
                     </div>
-                    <div class="summaryModal" id="summary5">
+                    <div class="summary-modal" id="summary5">
                         <span class="close">&times;</span>
                         <ul>
                             <li>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as
@@ -448,7 +448,7 @@
                     </div>
                 </div>
             </div>
-            <div id="start-quiz"><button type="button" id="start-quiz-btn" onclick="showHideQuiz()">Start revision
+            <div id="start-quiz"><button type="button" id="start-quiz-btn">Start revision
                     quiz!</button></div>
             <h2 id="quiz-title">Revision Quiz</h2>
             <div id="question-container">
@@ -481,7 +481,9 @@
         </footer>
     </content>
 
-    <script src="assets/js/scripts.js"></script>
+    <script type="module" src="/assets/js/scripts.js">
+        import { showHideQuiz, setUpAndHideQuiz } from '/assets/js/scripts.js';
+    </script>
     <!-- font awsome script -->
     <script src="https://kit.fontawesome.com/c92ad0e9bd.js" crossorigin="anonymous"></script>
 </body>
