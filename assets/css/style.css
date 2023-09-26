@@ -64,6 +64,7 @@ a:hover {
     color: #f2f3ae;
     background-color: transparent;
     text-decoration: underline;
+    transform: scale(1.05);
 }
 
 a:active {
@@ -195,6 +196,11 @@ main {
     color: inherit;
     background-color: inherit;
     border: none;
+    transition: transform .2s;
+}
+
+#start-quiz-btn:hover {
+    transform: scale(1.05);
 }
 
 #quiz-title {
@@ -243,8 +249,8 @@ main {
 }
 
 
-/** Lessons-container **/
-#lessons-container {
+/** Summary-container **/
+#summary-container {
     display: flex;
     width: 100%;
     margin: 20px 0;
@@ -253,12 +259,13 @@ main {
     justify-content: center;
 }
 
-.link-to-lesson {
+.link-for-summary {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
     flex-basis: 120px;
     flex-grow: 1;
+    transition: transform .2s;
     justify-items: center;
     align-items: center;
     border: 1px solid #5e463c;
@@ -267,9 +274,15 @@ main {
     height: 150px;
     width: 40vw;
     justify-content: center;
+    cursor: pointer;
     align-content: center;
     border-radius: 6px;
     box-shadow: 6px 6px 2px #5e463c;
+}
+
+.link-for-summary:hover  {
+    transform: scale(1.05);
+    
 }
 
 .collapsible {
@@ -302,6 +315,7 @@ main {
 
 .collapsible:hover {
     background-color: #6b584a;
+    transform: scale(1.05);
 }
 
 .content {
@@ -315,8 +329,8 @@ main {
     text-align: center;
 }
 
-.link-to-full,
-.link-to-summary {
+.link-for-summary,
+.icon-for-summary {
     margin: 15px 5px;
 }
 

@@ -13,9 +13,8 @@ let quizStats = {
 
 
 let openModal; //only one modal may open at at time!
-let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd']];
+let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'],  ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
-
 
 
 document.getElementById("start-quiz-btn").addEventListener("click", function () {
@@ -26,12 +25,25 @@ document.getRootNode().addEventListener("DOMContentLoaded", function () {
     showHideQuiz();
 });
 
-"DOMContentLoaded"
+document.getElementById("link-to-info-modal").addEventListener("click", function () {
+    document.getElementById("how-to-use").style.display = "block";
+});
 
 
+function addEventListenersToSummaryLinks() {
+    let linkDivs = document.getElementsByClassName("link-for-summary");
+    for (let i = 0; i < linkDivs.length; i++) {
+        let summaryNum = i + 1;
+        linkDivs[i].addEventListener("click", function () {
+            document.getElementById("summary" + summaryNum).style.display = "block";
+        });
+    }
+}
+
+let newCount = 0
 function showHideQuiz() {
-    console.log("Display: " + document.getElementById("quiz-title").style.display)
-    if (document.getElementById("quiz-title").style.display === "block") {
+    newCount++;
+    if (document.getElementById("quiz-title").style.display === "block" || document.getElementById("quiz-title").style.display.length === 0) {
         document.getElementById("quiz-title").style.display = "none";
         document.getElementById("question-container").style.display = "none";
         document.getElementById("quiz-score").style.display = "none";
@@ -50,11 +62,11 @@ function gatherQuizStats() {
     fillQuestion(quizStats.currentQuestion);
 }
 
-function setUpAndHideQuiz() {
-    gatherQuizStats();
-    showHideQuiz();
-}
 
+/**
+ * 
+ * @param {integer} count The count of answers that need to be created
+ */
 function createAnswerDivs(count) {
     let htmlString = "";
     for (let i in quizData.questions[count].answers) {
@@ -66,6 +78,10 @@ function createAnswerDivs(count) {
     document.getElementById('answer-options').innerHTML = htmlString;
 }
 
+/**
+ * 
+ * @param {integer} count The number of questions contained in the quiz
+ */
 function fillQuestion(count) {
     document.getElementById('question-text').innerHTML = quizData.questions[count].question;
     createAnswerDivs(count);
@@ -91,23 +107,22 @@ function fillQuestion(count) {
         if (quizStats.questionsRemaining === 1) {
             questionsRemainingString = "question";
         };
-        document.getElementById("running-total").innerHTML = `You have answered ${correctAnswers} ${questionsCorrectString} correctly out of 
+        document.getElementById("running-total").innerHTML = `You have answered ${quizStats.correctAnswers} ${questionsCorrectString} correctly out of 
                 ${quizStats.questionsCompleted} so far; you have ${quizStats.questionsRemaining} ${questionsRemainingString} left to do!`;
     }
 }
 
-// run click handler when user clicks on an answer-option
-
+// Run click handler when user clicks on an answer-option
 function setupAnswerClickHandler() {
     document.getElementById('answer-options').addEventListener('click', function (event) {
         // Check if clicked element is a button, do nothing if it's not.
         if (event.target.tagName === "BUTTON") {
             evaluateAnswer(event.target.id);
             // Perform your actions here
-            if (quizStats.currentQuestion < totalQuestions) {
+            if (quizStats.currentQuestion < quizStats.totalQuestions) {
                 quizStats.questionsRemaining--;
                 quizStats.questionsCompleted++;
-                fillQuestion(currentQuestion);
+                fillQuestion(quizStats.currentQuestion);
             } else {
                 quizStats.finished = true;
                 announceResults(quizStats);
@@ -116,10 +131,9 @@ function setupAnswerClickHandler() {
     });
 }
 
-
 function evaluateAnswer(idString) {
     const answerId = idString.split("-");
-    if (quizStats.answerId[1] === "true") {
+    if (answerId[1] === "true") {
         quizStats.correctAnswers++;
         document.getElementById(idString).style.backgroundColor = 'green';
     } else {
@@ -131,10 +145,10 @@ function evaluateAnswer(idString) {
 function announceResults(quizStats) {
     document.getElementById('question-text').innerHTML = "<em>You've finished the quiz!</em>";
     document.getElementById('answer-options').innerHTML = "";
-
-    if (quizStats.correctAnswers === totalQuestions) {
+    let feedbackString;
+    if (quizStats.correctAnswers === quizStats.totalQuestions) {
         feedbackString = "Perfect score! Congratulations!";
-    } else if (quizStats.correctAnswers >= totalQuestions * .75) {
+    } else if (quizStats.correctAnswers >= quizStats.totalQuestions * .75) {
         feedbackString = "Not bad! Keep up the good work!";
     } else if (quizStats.correctAnswers >= quizStats.totalQuestions * .5) {
         feedbackString = "This still needs a little work! Take another look at the rules!";
@@ -159,35 +173,7 @@ function announceResults(quizStats) {
 
 }
 
-function setupSummaryLink() {
-    let summaryLink = document.getElementsByClassName('link-to-summary');
-    let hyperlinkDivs = [];
-    let targetDivs = [];
-    for (let i = 0; i < summaryLink.length; i++) {
-        let idFrom = summaryLink[i].id;
-        hyperlinkDivs.push(document.getElementById(idFrom));
-        let idTo = idFrom.replace(/-/g, '');
-        hyperlinkDivs[i].innerHTML = `<a href='#${idTo}'>${hyperlinkDivs[i].innerHTML}</a>`;
-        targetDivs[i] = document.getElementById(idTo);
-        hyperlinkDivs[i].onclick = function () {
-            targetDivs[i].style.display = "block";
-            openModal = targetDivs[i];
-            console.log(openModal);
-        };
-    };
-}
-
-window.onclick = function (event) {
-    console.log("event.target: " + event.target.innerHTML);
-    if (event.target.id != openModal) {
-        //       openModal.style.display = "none";
-        //       openModal = undefined;
-    }
-}
-
-var collapsible = document.getElementsByClassName("collapsible");
-var i;
-
+var collapsible = document.getElementsByClassName("collapsible")
 for (let i = 0; i < collapsible.length; i++) {
     collapsible[i].addEventListener("click", function () {
         this.classList.toggle("active");
@@ -232,8 +218,7 @@ function genOrderedIntArray(from, to) {
 }
 
 chooseColorSchemes(document.getElementsByClassName('collapsible'), collapsibleColorScheme);
-chooseColorSchemes(document.getElementsByClassName('link-to-lesson'), lessonLinkColorScheme);
-console.log(document.getElementById("quiz-title").style.display);
-setUpAndHideQuiz();
+chooseColorSchemes(document.getElementsByClassName('link-for-summary'), lessonLinkColorScheme);
+gatherQuizStats();
 setupAnswerClickHandler();
-setupSummaryLink()
+addEventListenersToSummaryLinks();
