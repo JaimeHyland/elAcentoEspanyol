@@ -34,7 +34,7 @@
                 <h1 id="site-heading">El <em>acento</em> español</h1>
                 <p id="site-subheading">Five lessons on using the <em>acento</em> in Spanish</p>
             </div>
-            <div id="link-to-info-modal">
+            <div id="link-to-info-modal" class="clickable">
                 <i class="fa-solid fa-circle-info fa-2xl"></i>
             </div>
         </header>
@@ -42,26 +42,28 @@
         <main>
             <div class="summary-modal" id="how-to-use">
                 <h3>How to use this site</h3>
-                <p>At the top of this website you'll find links five revision flash cards on use of the acento. Below those links you'll find a quiz to check what you've learned.</p>
-                <p>The site also provides a quiz for you to practice what you've learned here.</p> <p>Just click on the button to begin your quiz.</p>
+                <p>At the top of this website you'll find links to five revision flash cards on use of the acento. Below
+                    those links you'll find a quiz to check what you've learned.</p>
+                <p>The site also provides a quiz for you to practice what you've learned here.</p>
+                <p>Just click on the <em>Show Revision Quiz</em> button to begin your quiz.</p>
             </div>
             <div id="summary-container">
                 <div class="link-for-summary" id="lesson-1">
                     <div class="lesson-name">
-                        <h4> Lesson One &mdash; <em>palabras agudas</em> </h4>
+                        <h4> Card One &mdash; <em>palabras agudas</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-1"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
                 <div class="summary-modal" id="summary1">
                     <span class="close">&times;</span>
                     <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
-                    <p>they end with a consonant other than n or s</p>
-                    <p>otherwise they do</p>
+                    <p>they end with a consonant other than n or s;</p>
+                    <p>otherwise they do.</p>
                 </div>
 
                 <div class="link-for-summary" id="Lesson-2">
                     <div class="lesson-name">
-                        <h4> Lesson Two &mdash; <em>palabras llanas</em> </h4>
+                        <h4> Card Two &mdash; <em>palabras llanas</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-2"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
@@ -76,7 +78,7 @@
 
                 <div class="link-for-summary" id="Lesson-3">
                     <div class="lesson-name">
-                        <h4> Lesson Three &mdash; <em>palabras esdrújulas</em> etc. </h4>
+                        <h4> Card Three &mdash; <em>palabras esdrújulas</em> etc. </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-3"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
@@ -87,7 +89,7 @@
                 </div>
                 <div class="link-for-summary" id="Lesson-4">
                     <div class="lesson-name">
-                        <h4> Lesson Four &mdash; <em>distinguishing homonyms</em> </h4>
+                        <h4> Card Four &mdash; <em>distinguishing homonyms</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-4"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
@@ -101,7 +103,7 @@
                 </div>
                 <div class="link-for-summary" id="Lesson-5">
                     <div class="lesson-name">
-                        <h4> Lesson Five &mdash; <em>Dipthongs, tripthongs &amp; hiatuses</em> </h4>
+                        <h4> Card Five &mdash; <em>Dipthongs, tripthongs &amp; hiatuses</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-5"><i class="fa-solid fa-list-check fa-xl"></i></div>
 
@@ -120,8 +122,9 @@
                     </div>
                 </div>
             </div>
-            <div id="start-quiz"><button type="button" id="start-quiz-btn">Start revision
-                    quiz!</button></div>
+            <div id="start-quiz">
+                <button type="button" id="start-quiz-btn">Start revision quiz!</button>
+                </div>
             <h2 id="quiz-title">Revision Quiz</h2>
             <div id="question-container">
                 <div class="question">
@@ -133,7 +136,7 @@
             <div id="quiz-score">
                 <p id="running-total"></p>
             </div>
-            <button type="button" id="what-its-for">What's the <em>acento</em> there for
+            <button type="button" class="xtraCollapsible" id="what-its-for">What's the <em>acento</em> there for
                 anyway?</button>
             <div class="full-lesson content" id="full0">
                 <p>There are three purposes to the written <em>acento</em>.</p>
@@ -148,17 +151,16 @@
             </div>
             <button type="button" class="collapsible" id="agudas">Lesson 1 &mdash; <em>palabras agudas</em> </button>
             <div class="full-lesson content" id="full1">
-                <p>Don't put a written accent on words whose stress is on their last syllable (the Real Academia de
-                    la
-                    Lengua Espanola call them <em>palabras agudas</em>) unless they end with
-                    a consonant other than <em>n</em> or <em>s</em>.</p>
+                <h3>Rule 1</h3>
+                <p>Don't put a written accent on words with a <strong>stress on their last syllable</strong> (the Real
+                    Academia de
+                    la Lengua Espanola call them <em>palabras agudas</em>) unless they end with a consonant other than
+                    <em>n</em> or <em>s</em>.</p>
 
-                <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written
-                    accent
-                    on the stressed
-                    vowel.</p>
+                <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written accent
+                    on the stressed vowel.</p>
 
-                <h3>Examples:</h3>
+                <h4>Examples:</h4>
                 <ul>
                     <li>
                         comer
@@ -208,9 +210,10 @@
             </div>
             <button type="button" class="collapsible" id="llanas">Lesson 2 &mdash; <em>palabras llanas</em> </button>
             <div class="full-lesson content" id="full2">
-                <p>With words that have their stress on their second to last syllable (The <em>Real Academia</em> call these
-                    ones
-                    <em>palabras graves</em> or <em>palabras llanas</em>), the rule is the other way around:
+                <h3>Rule 2</h3>
+                <p>With words that have their <strong>stress on their second to last syllable</strong> (The <em>Real
+                        Academia</em> call these
+                    ones <em>palabras graves</em> or <em>palabras llanas</em>), the rule is the other way around:
                     they <em>should</em> be given a written accent if they end with a consonant other than
                     <em>n</em> or
                     <em>s</em>. And
@@ -280,9 +283,12 @@
                 <button class="spot-check" id="spot-btn-lesson2"><i
                         class="fa-solid fa-check-double fa-2xl"></i></button>
             </div>
-            <button type="button" class="collapsible" id="esdrujulas">Lesson 3 &mdash; <em>palabras esdrújulas</em> etc. </button>
+            <button type="button" class="collapsible" id="esdrujulas">Lesson 3 &mdash; <em>palabras esdrújulas</em> etc.
+            </button>
             <div class="full-lesson content" id="full3">
-                <p>Words with a stress on their third from last syllable (called "palabras esdrújulas" by the Real
+                <h3>Rule 3</h3>
+                <p>Words with a stress on their <strong></strong>third from last syllable</strong> (called <em>palabras
+                        esdrújulas</em> by the Real
                     Academia) always have a written accent.</p>
 
                 <h3>Examples:</h3>
@@ -306,12 +312,15 @@
                     syllable to be marked with a written accent.</p>
 
                 <p>As always, though, (¿cómo no?) there is an exception. Luckily for us, it's pretty easy to
-                    remember:
-                    adverbs ending with <em>-mente</em> don't need a written accent unless the adjective that forms
-                    their root needs one. Effectively what the rule means is that you should add -mente as required
-                    by
-                    the applicable rules,
-                    leaving any written accent that was already on the root untouched.</p>
+                    remember:</p>
+                <ul>
+                    <li>
+                        adverbs ending with <em>-mente</em> don't need a written accent unless the adjective that forms
+                        their root needs one.
+                    </li>
+                </ul>
+                <p>Effectively what this rule means is that you should add -mente (as required by the <a href=""target="_blank" ></a>applicable rules),
+                leaving any written accent that was already on the root untouched.</p>
                 <h5>SO ...</h5>
 
                 <ul>
@@ -345,10 +354,12 @@
                 <button class="spot-check" id="spot-btn-lesson3"><i
                         class="fa-solid fa-check-double fa-2xl"></i></button>
             </div>
-            <button type="button" class="collapsible" id="esdrujulas">Lesson 4 &mdash; <em>el acento diacrítico</em> etc. </button>
+            <button type="button" class="collapsible" id="esdrujulas">Lesson 4 &mdash; <em>el acento diacrítico</em>
+                etc. </button>
             <div class="full-lesson content" id="full4">
                 <p>Some very commonly used (and mostly short) words have a written accent when used in one sense and
-                    have none when used in another. It's there to distinguish between the two meanings. An acento used for this purpose is called an <em>acento diacrítico</em>.</p>
+                    have none when used in another. It's there to distinguish between the two meanings. An acento used
+                    for this purpose is called an <em>acento diacrítico</em>.</p>
 
                 <p>The following are some of the most common ones:</p>
 
@@ -411,8 +422,9 @@
                 <button class="spot-check" id="spot-btn-lesson4"><i
                         class="fa-solid fa-check-double fa-2xl"></i></button>
             </div>
-        
-            <button type="button" class="collapsible" id="esdrujulas">Lesson Five &mdash; <em>Dipthongs, tripthongs &amp; hiatuses</em></button>
+
+            <button type="button" class="collapsible" id="esdrujulas">Lesson Five &mdash; <em>Dipthongs, tripthongs
+                    &amp; hiatuses</em></button>
             <div class="full-lesson content" id="full5">
                 <p>The first thing to say under this category is that dipthongs and tripthongs follow the same
                     rules
@@ -472,7 +484,7 @@
         </footer>
     </content>
 
-    <script type="module" src="/assets/js/scripts.js">
+    <script type="module" src="assets/js/scripts.js">
         import { showHideQuiz, setUpAndHideQuiz } from '/assets/js/scripts.js';
     </script>
     <!-- font awsome script -->

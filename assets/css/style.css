@@ -23,7 +23,6 @@ body {
     align-items: center;
     justify-content: center;
     font-family: 'Montserrat', sans-serif;
-
 }
 
 h1,
@@ -49,7 +48,6 @@ h3 {
 
 a:link {
     color: #fabe00;
-    ;
     background-color: transparent;
     text-decoration: none;
 }
@@ -59,6 +57,16 @@ a:visited {
     background-color: transparent;
     text-decoration: none;
 }
+
+.clickable {
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+.clickable:hover {
+    transform: scale(1.2);
+}
+
 
 a:hover {
     color: #f2f3ae;
@@ -185,6 +193,12 @@ main {
     margin: auto;
     margin-bottom: 30px;
     box-shadow: 6px 6px 2px #5e463c;
+    transition: transform .2s;
+    cursor: pointer;
+}
+
+#start-quiz:hover {
+    transform: scale(1.05);
 }
 
 #start-quiz-btn {
@@ -196,12 +210,10 @@ main {
     color: inherit;
     background-color: inherit;
     border: none;
-    transition: transform .2s;
+    cursor: inherit;
 }
 
-#start-quiz-btn:hover {
-    transform: scale(1.05);
-}
+
 
 #quiz-title {
     display: block;
@@ -282,11 +294,12 @@ main {
 
 .link-for-summary:hover  {
     transform: scale(1.05);
-    
 }
 
+#what-its-for,
 .collapsible {
     cursor: pointer;
+    color:#fafafa;
     padding: 18px;
     width: 100%;
     border: 1px #f7eedd;
@@ -313,6 +326,7 @@ main {
     display: none;
 }
 
+#what-its-for,
 .collapsible:hover {
     background-color: #6b584a;
     transform: scale(1.05);

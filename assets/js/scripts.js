@@ -13,7 +13,7 @@ let quizStats = {
 
 
 let openModal; //only one modal may open at at time!
-let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'],  ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
+let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 
 
@@ -139,7 +139,7 @@ function evaluateAnswer(idString) {
     } else {
         quizStats.incorrectAnswers++;
         document.getElementById(idString).style.backgroundColor = 'red';
-     }
+    }
 }
 
 function announceResults(quizStats) {
@@ -170,20 +170,21 @@ function announceResults(quizStats) {
         document.getElementById("running-total").innerHTML = `You answered ${quizStats.correctAnswers} ${quizStats.questionsCorrectString} correctly out of 
         ${quizStats.totalQuestions}. <br>${feedbackString}`;
     };
-
 }
 
-var collapsible = document.getElementsByClassName("collapsible")
-for (let i = 0; i < collapsible.length; i++) {
-    collapsible[i].addEventListener("click", function () {
-        this.classList.toggle("active");
-        var content = this.nextElementSibling;
-        if (content.style.display === "block") {
-            content.style.display = "none";
-        } else {
-            content.style.display = "block";
-        }
-    });
+function implementCollapsibleTexts(className) {
+    var collapsible = document.getElementsByClassName(className);
+    for (let i = 0; i < collapsible.length; i++) {
+        collapsible[i].addEventListener("click", function () {
+            this.classList.toggle("active");
+            var content = this.nextElementSibling;
+            if (content.style.display === "block") {
+                content.style.display = "none";
+            } else {
+                content.style.display = "block";
+            }
+        });
+    }
 }
 
 function chooseColorSchemes(divArray, colorSchemeArray) {
@@ -222,3 +223,5 @@ chooseColorSchemes(document.getElementsByClassName('link-for-summary'), lessonLi
 gatherQuizStats();
 setupAnswerClickHandler();
 addEventListenersToSummaryLinks();
+implementCollapsibleTexts("collapsible");
+implementCollapsibleTexts("xtraCollapsible");
