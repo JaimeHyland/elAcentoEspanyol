@@ -167,14 +167,14 @@ main {
     float: right;
     font-size: 28px;
     font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
+}
+
+.close:hover,
+.close:focus {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-  }
+}
 
 
 .summaryModal li {
@@ -212,7 +212,6 @@ main {
     border: none;
     cursor: inherit;
 }
-
 
 
 #quiz-title {
@@ -294,7 +293,7 @@ main {
     box-shadow: 6px 6px 2px #5e463c;
 }
 
-.link-for-summary:hover  {
+.link-for-summary:hover {
     transform: scale(1.05);
 }
 
@@ -302,7 +301,7 @@ main {
 .collapsible {
     cursor: pointer;
     background-color: #81b29a;
-    color:#fafafa;
+    color: #fafafa;
     padding: 18px;
     width: 100%;
     border: 1px #f7eedd;
@@ -311,6 +310,12 @@ main {
     font-size: 15px;
     text-align: center;
     box-shadow: 2px 2px 1px #5e463c;
+    transition: transform .2s;
+}
+
+.xtraCollapsible:hover,
+.collapsible:hover {
+    transform: scaleY(1.05);
 }
 
 .content p {
@@ -327,12 +332,6 @@ main {
 
 .bullet-point-rules {
     display: none;
-}
-
-.xtraCollapsible:hover,
-.collapsible:hover {
-    background-color: #6b584a;
-    transform: scale(1.05);
 }
 
 .content {

@@ -142,6 +142,378 @@
           true
         ]
       ]
+    },
+    {
+      "question": "Hay _________ contestar las cartas de la Agencia Tributaria.",
+      "answers": [
+        [
+          "qué",
+          false
+        ],
+        [
+          "que",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Hago _________ con mi hermana cada martes.",
+      "answers": [
+        [
+          "aerobic",
+          false
+        ],
+        [
+          "aeróbic",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "El Juanjo _________ sus perros.",
+      "answers": [
+        [
+          "maltrata",
+          true
+        ],
+        [
+          "maltráta",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "Mucha gente va al centro _________ en Vigo para aprender a bucear.",
+      "answers": [
+        [
+          "acuático",
+          true
+        ],
+        [
+          "acuatico",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "Se ha construido el nuevo edificio en la Calle Peñon muy _________.",
+      "answers": [
+        [
+          "léntamente",
+          false
+        ],
+        [
+          "lentamente",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Todos estos trozos de ágata fueron _________ de una mina en una zona remota del estado norteaméricano de Montana.",
+      "answers": [
+        [
+          "extráidos",
+          false
+        ],
+        [
+          "extraídos",
+          true
+        ],
+        [
+          "extraidos",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "La palabra 'áun' lleva un acento _________.",
+      "answers": [
+        [
+          "diacritico",
+          false
+        ],
+        [
+          "díacritico",
+          false
+        ],
+        [
+          "diacrítico",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "¿____________ años tiene la tia Maripí?",
+      "answers": [
+        [
+          "Cuantos",
+          false
+        ],
+        [
+          "Cúantos",
+          false
+        ],
+        [
+          "Cuántos",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "¡Dios mío! ¡____________ maleducada es la niña!",
+      "answers": [
+        [
+          "que",
+          false
+        ],
+        [
+          "qué",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "____________ maletín está encima del armario",
+      "answers": [
+        [
+          "Tú",
+          false
+        ],
+        [
+          "Tu",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Le aconsejo que le ____________ un beso fuerte a su hija cuándo venga de la escuela",
+      "answers": [
+        [
+          "de",
+          false
+        ],
+        [
+          "dé",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Pienso que no _________ superará este rendimento deportivo en muchos años.",
+      "answers": [
+        [
+          "se",
+          true
+        ],
+        [
+          "sé",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "A ____________ no me importa ni un carrajo qué hace con el partido",
+      "answers": [
+        [
+          "mi",
+          false
+        ],
+        [
+          "mí",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "____________ que no se superará este rendimento deportivo",
+      "answers": [
+        [
+          "Se",
+          true
+        ],
+        [
+          "Sé",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "____________ con mis bendiciones",
+      "answers": [
+        [
+          "Vayanse",
+          true
+        ],
+        [
+          "Váyanse",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Lo creo porque me lo dijo ____________.",
+      "answers": [
+        [
+          "el",
+          false
+        ],
+        [
+          "él",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Mañana podremos jugar un rato ___________, ahora ya estoy muy cansadísima.",
+      "answers": [
+        [
+          "mas",
+          false
+        ],
+        [
+          "más",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "El dinero es útil, ___________ sin amor no vale para nada.",
+      "answers": [
+        [
+          "mas",
+          true
+        ],
+        [
+          "más",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "Este trozo no tiene buena pinta, toma __________.",
+      "answers": [
+        [
+          "este",
+          false
+        ],
+        [
+          "éste",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "__________ tío no tiene novia.",
+      "answers": [
+        [
+          "Este",
+          true
+        ],
+        [
+          "Éste",
+          false
+        ]
+      ]
+    }
+    ,
+    {
+      "question": "Los Estados Unidos de __________.",
+      "answers": [
+        [
+          "America",
+          false
+        ],
+        [
+          "América",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Me gustan mucho los __________ que llevan las mujeres de Sevilla en verano.",
+      "answers": [
+        [
+          "abanicos",
+          true
+        ],
+        [
+          "abanícos",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "__________ tío no tiene novia.",
+      "answers": [
+        [
+          "Este",
+          true
+        ],
+        [
+          "Éste",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "El drama __________ con el asasinato sangriento del personaje principal.",
+      "answers": [
+        [
+          "colmó",
+          true
+        ],
+        [
+          "colmo",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "No __________ hacer.",
+      "answers": [
+        [
+          "se que",
+          false
+        ],
+        [
+          "sé qué",
+          true
+        ],
+        [
+          "sé que",
+          false
+        ],
+        [
+          "se qué",
+          false
+        ]
+      ]
+    },
+    {
+      "question": "La señora Etxebarria ha tenido mucho éxito en el __________ de la ngeniería ligera.",
+      "answers": [
+        [
+          "ambito",
+          false
+        ],
+        [
+          "ámbito",
+          true
+        ]
+      ]
+    },
+    {
+      "question": "Vino de vuelta el papá __________ las nueve.",
+      "answers": [
+        [
+          "hacía",
+          false
+        ],
+        [
+          "hacia",
+          true
+        ]
+      ]
     }
   ]
 }
