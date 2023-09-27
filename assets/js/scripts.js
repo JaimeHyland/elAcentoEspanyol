@@ -1,24 +1,46 @@
 import quizData from './quiz.json' assert {type: 'json'};
-
 let quizStats = {
-    totalQuestions: 0,
-    currentQuestion: 0,
-    questionsCompleted: 0,
-    questionsRemaining: 0,
-    correctAnswers: 0,
-    incorrectAnswers: 0,
-    finished: false,
-    started: false
+    'totalQuestions': 0,
+    'questionsPerQuiz': 10,
+    'currentQuestion': 0,
+    'questionsCompleted': 0,
+    'questionsRemaining': 0,
+    'correctAnswers': 0,
+    'incorrectAnswers': 0,
+    'finished': false,
+    'started': false,
+};
+
+function reinitializeQuiz() {
+    quizStats.totalQuestions = 0;
+    quizStats.currentQuestion = 0;
+    quizStats.questionsCompleted = 0;
+    quizStats.questionsRemaining = 0;
+    quizStats.correctAnswers = 0;
+    quizStats.incorrectAnswers = 0;
+    quizStats.finished = false;
+    quizStats.started = false;
 };
 
 
-let openModal; //only one modal may open at at time!
+let modalOpen = false; //only one modal may open at at time!
 let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 
 
 document.getElementById("start-quiz-btn").addEventListener("click", function () {
-    showHideQuiz();
+    console.log("Finished on clicking button: " + quizStats.finished);
+    if (quizStats.finished) {
+        console.log("quizStats.finished: " + quizStats.finished)
+        console.log("Restart the quiz!");
+        gatherQuizStats();
+        showHideQuiz();
+        showHideQuiz(); //run twice cos you don't want to hide it by default!
+    } else {
+        console.log("quizStats.finished: " + quizStats.finished)
+        console.log("Don't restart the quiz!");
+        showHideQuiz();
+    }
 });
 
 document.getRootNode().addEventListener("DOMContentLoaded", function () {
@@ -26,7 +48,9 @@ document.getRootNode().addEventListener("DOMContentLoaded", function () {
 });
 
 document.getElementById("link-to-info-modal").addEventListener("click", function () {
+    if (modalOpen === false) {
     document.getElementById("how-to-use").style.display = "block";
+    }
 });
 
 
@@ -43,6 +67,7 @@ function addEventListenersToSummaryLinks() {
 let newCount = 0
 function showHideQuiz() {
     newCount++;
+
     if (document.getElementById("quiz-title").style.display === "block" || document.getElementById("quiz-title").style.display.length === 0) {
         document.getElementById("quiz-title").style.display = "none";
         document.getElementById("question-container").style.display = "none";
@@ -57,15 +82,18 @@ function showHideQuiz() {
 }
 
 function gatherQuizStats() {
+    reinitializeQuiz();
+    console.log("quizStats.currentQuestion after reinit: " + quizStats.currentQuestion);
     quizStats.totalQuestions = quizData.questions.length;
+    console.log(quizStats.totalQuestions);
     quizStats.questionsRemaining = quizStats.totalQuestions;
+    console.log(quizStats.questionsRemaining)
     fillQuestion(quizStats.currentQuestion);
 }
 
-
 /**
  * 
- * @param {integer} count The count of answers that need to be created
+ * @param {integer} count ... Any number of answers are possible! Though more than four short ones will cause presentation problems.
  */
 function createAnswerDivs(count) {
     let htmlString = "";
@@ -83,9 +111,11 @@ function createAnswerDivs(count) {
  * @param {integer} count The number of questions contained in the quiz
  */
 function fillQuestion(count) {
+    console.log("count: " + count)
     document.getElementById('question-text').innerHTML = quizData.questions[count].question;
     createAnswerDivs(count);
     quizStats.currentQuestion++;
+    console.log("currentQuestion: " + quizStats.currentQuestion);
     quizStats.started = true;
     if (quizStats.totalQuestions === 1) {
         // Just one question
@@ -95,7 +125,7 @@ function fillQuestion(count) {
         document.getElementById("running-total").innerHTML = `This is the first question; you have this and just one more question to do! Good luck!`;
     } else if (quizStats.currentQuestion === 1) {
         //three questions or more; this is the first one
-        document.getElementById("running-total").innerHTML = `This is your first question! There are ${quizStats.totalQuestions} questions in total!`;
+        document.getElementById("running-total").innerHTML = `This is your first question! There are ${quizStats.questionsRemaining} questions in total!`;
     } else {
         //allow for singulars and plurals in messages to user
         let questionsCorrectString = "questions";
@@ -124,8 +154,8 @@ function setupAnswerClickHandler() {
                 quizStats.questionsCompleted++;
                 fillQuestion(quizStats.currentQuestion);
             } else {
-                quizStats.finished = true;
                 announceResults(quizStats);
+                console.log("Finished on evaluating last answer: " + quizStats.finished);
             }
         }
     });
@@ -142,34 +172,40 @@ function evaluateAnswer(idString) {
     }
 }
 
-function announceResults(quizStats) {
+function announceResults(stats) {
     document.getElementById('question-text').innerHTML = "<em>You've finished the quiz!</em>";
     document.getElementById('answer-options').innerHTML = "";
     let feedbackString;
-    if (quizStats.correctAnswers === quizStats.totalQuestions) {
-        feedbackString = "Perfect score! Congratulations!";
-    } else if (quizStats.correctAnswers >= quizStats.totalQuestions * .75) {
+    if (stats.correctAnswers === stats.totalQuestions) {
+        feedbackString = "Perfect score!";
+        document.getElementById('answer-options').innerHTML = "<h2>¡Enhorabuena!</h2>";
+    } else if (stats.correctAnswers >= stats.totalQuestions * .75) {
         feedbackString = "Not bad! Keep up the good work!";
-    } else if (quizStats.correctAnswers >= quizStats.totalQuestions * .5) {
+        document.getElementById('answer-options').innerHTML = "<h2>¡Bien hecho!</h2>";
+    } else if (stats.correctAnswers >= stats.totalQuestions * .5) {
         feedbackString = "This still needs a little work! Take another look at the rules!";
+        document.getElementById('answer-options').innerHTML = "<h2>¡Sigue en ello!</h2>";
     } else {
         feedbackString = "If you'd chosen your answers at random, you'd probably have done better! I'm afraid it's back to the drawing board!";
+        document.getElementById('answer-options').innerHTML = "<h2>¡Ups!</h2>";
     };
     // allow for singular and plurals in result
-    quizStats.questionsCorrectString = "questions";
-    if (quizStats.correctAnswers === 1) {
-        quizStats.questionsCorrectString = "question";
+    stats.questionsCorrectString = "questions";
+    if (stats.correctAnswers === 1) {
+        stats.questionsCorrectString = "question";
     };
-    if (quizStats.totalQuestions === 1) {
+    if (stats.totalQuestions === 1) {
         if (correctAnswers === 0) {
             document.getElementById("running-total").innerHTML = `Hard luck! You got the question wrong!`;
         } else {
             document.getElementById("running-total").innerHTML = `Well done! That's correct!`;
         }
     } else {
-        document.getElementById("running-total").innerHTML = `You answered ${quizStats.correctAnswers} ${quizStats.questionsCorrectString} correctly out of 
-        ${quizStats.totalQuestions}. <br>${feedbackString}`;
+        document.getElementById("running-total").innerHTML = `You answered ${stats.correctAnswers} ${stats.questionsCorrectString} correctly out of 
+        ${stats.totalQuestions}. <br>${feedbackString}`;
     };
+    document.getElementById("start-quiz-btn").innerHTML = "Do the quiz again";
+    quizStats.finished = true;
 }
 
 function implementCollapsibleTexts(className) {

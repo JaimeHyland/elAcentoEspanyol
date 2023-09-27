@@ -186,8 +186,8 @@ main {
 #start-quiz {
     border: solid 1px;
     border-radius: 8px;
-    color: #5e463c;
-    background-color: #eed090;
+    color: #f4f1de;
+    background-color: #e07a5f;
     border-color: #5e463c;
     width: fit-content;
     margin: auto;
@@ -237,6 +237,8 @@ main {
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
+    color: #e07a5f;
+    text-shadow: #eed090;
 }
 
 .answer-option {
@@ -296,9 +298,10 @@ main {
     transform: scale(1.05);
 }
 
-#what-its-for,
+.xtraCollapsible,
 .collapsible {
     cursor: pointer;
+    background-color: #81b29a;
     color:#fafafa;
     padding: 18px;
     width: 100%;
@@ -326,7 +329,7 @@ main {
     display: none;
 }
 
-#what-its-for,
+.xtraCollapsible:hover,
 .collapsible:hover {
     background-color: #6b584a;
     transform: scale(1.05);
