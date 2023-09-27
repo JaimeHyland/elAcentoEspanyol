@@ -1,4 +1,12 @@
-import questionData from './quiz.json' assert {type: 'json'};
+import jsonData from './quiz.json' assert {type: 'json'};
+
+//Colors for randomly colored buttons and divs. They are identical, but could of course be different!
+let modalOpen = false; //only one modal may open at at time!
+let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
+let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
+
+
+//quizStats contains the initial values for making each quiz, keeps track of user progress and indicates when the user is finished.
 let quizStats = {
     'totalQuestions': 0,
     'questionsPerQuiz': 10,
@@ -11,23 +19,44 @@ let quizStats = {
     'started': false,
 };
 
-let fullQuizData = QuestionsFromData(questionData);
-let quizData = shuffleAndSelectQuestions(fullQuizData, quizStats.questionsPerQuiz);
+let fullQuestionData; //all the quiz questions in the quiz.json file that remain to be put in a quiz
+let quizQuestions; //the questions chosen for the current quiz
 
-//Simply reads in the questions from the full data imported from quiz.json
+try {
+    fullQuestionData = QuestionsFromData(jsonData);
+    quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
+} catch (error) {
+    window.alert(error + "<br>It looks like the quiz.json file you're using doesn't have any quiz questions in in the right format!");
+}
+
+
+/**
+ * 
+ * @param {object} data must be an import from a json file containing a questions node
+ * @returns the questions from the questions node of the json import
+ */
 function QuestionsFromData(data) {
     const quizQuestions = data.questions;
     return quizQuestions;
 }
 
 //shuffles the questions and returns the first num of them, deleting the ones it has selected.
+/**
+ * 
+ * @param {object} 'questions' the object containing the questions to be shuffled
+ * @param {int} 'num' the number of questions you want to extract from the full set of questions
+ * @returns a num-sized array of questions in random order
+ */
 function shuffleAndSelectQuestions(questions, num) {
-    for (let i = questions.length -1; i > 0; i--) {
+    if (num > questions.length) {
+        num = questions.length;
+    }
+    for (let i = questions.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
         [questions[i], questions[j]] = [questions[j], questions[i]];
     }
     questions = questions.slice(0, num);
-    console.log(questions[0])
+    fullQuestionData = fullQuestionData.slice(num, fullQuestionData.length);
     return questions;
 }
 
@@ -42,24 +71,28 @@ function reinitializeQuiz() {
     quizStats.started = false;
 };
 
-//Colors for randomly colored buttons
-let modalOpen = false; //only one modal may open at at time!
-let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
-let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
-
-
 // Event handler for quiz button
 document.getElementById("start-quiz-btn").addEventListener("click", function () {
     if (quizStats.finished) {
+        quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
+        console.log("fullQuestionData.length; " + fullQuestionData.length)
         gatherQuizStats();
     } else {
         showHideQuiz();
     }
 });
 
-//Hide the quiz by default on startup. Needs event handler to ensure quiz is created first.
+//Hides the quiz on startup. Needs event handler to ensure quiz is created first.
 document.getRootNode().addEventListener("DOMContentLoaded", function () {
     showHideQuiz();
+    hideFlashCards();
+    let flashCards = document.getElementsByClassName("summary-modal")
+    console.log("DOMContentLoaded event triggered!")
+    console.log(flashCards[0].style.display);
+    console.log(flashCards[1].style.display);
+    console.log(flashCards[2].style.display);
+    console.log(flashCards[3].style.display);
+    console.log(flashCards[4].style.display);
 });
 
 //Event handler for info link icon on header
@@ -69,18 +102,54 @@ document.getElementById("link-to-info-modal").addEventListener("click", function
     }
 });
 
+function hideFlashCards() {
+    let flashCards = document.getElementsByClassName("summary-modal");
+    for (let i = 0; i < flashCards.length; i++)  {
+        flashCards[i].style.display = "none";
+    }
+}
+
 // Add event handlers for links to summary flash cards
 function addEventListenersToSummaryLinks() {
     let linkDivs = document.getElementsByClassName("link-for-summary");
     for (let i = 0; i < linkDivs.length; i++) {
         let summaryNum = i + 1;
-        linkDivs[i].addEventListener("click", function () {
-            document.getElementById("summary" + summaryNum).style.display = "block";
+        linkDivs[i].addEventListener("click", function (Event) {
+            let flashCard = document.getElementById("summary" + summaryNum)
+            flashCard.style.display = `block`;
+            console.log(`flashCard[${summaryNum}].style.display: ` + flashCard.style.display);
+
+            let touch;
+            if (Event.touches) {
+                touch = Event.touches[0];
+            } else {
+                touch = Event;
+            }
+
+            let fcHeight = flashCard.clientHeight;
+            let fcWidth = flashCard.clientWidth;
+            let topPosition = touch.clientY - fcHeight/2;
+            let leftPosition = touch.clientX - fcWidth/2;
+            let fcTop = Math.max(0, topPosition);
+            let fcLeft = Math.max(0, leftPosition);
+            
+        
+            flashCard.style.top = `${fcTop}px`;
+            flashCard.style.left = `${Math.max(0, )}px`;
+            console.log("flashCard[${summaryNum}].style.top: " + flashCard.style.top);
+            console.log("flashCard[${summaryNum}].style.left: " + flashCard.style.left);
+            document.addEventListener("click", function closeOnClickOutside(e) {
+                if (!flashCard.contains(e.target)) {
+                    flashCard.style.display = "none";
+                    document.removeEventListener("click", closeOnClickOutside);
+                    console.log("Event listener added")
+                }
+            });
         });
     }
 }
 
-//The if condition fires if the quiz-title is visible or if its style.display member is as yet undefined (the latter for first firing)
+//The 'if' condition fires if the quiz-title is either visible or not yet set (the latter for first firing)
 function showHideQuiz() {
     if (document.getElementById("quiz-title").style.display === "block" || document.getElementById("quiz-title").style.display.length === 0) {
         document.getElementById("quiz-title").style.display = "none";
@@ -96,25 +165,12 @@ function showHideQuiz() {
 }
 
 
-//quizStats shows the stats for the current quiz. quizData contains the full data from the json file.
+//quizStats shows the stats for the current quiz.
 function gatherQuizStats() {
     reinitializeQuiz();
-    console.log(quizData[0])
-    quizStats.totalQuestions = quizData.length;
+    quizStats.totalQuestions = quizQuestions.length;
     quizStats.questionsRemaining = quizStats.totalQuestions;
-    console.log(quizStats.questionsRemaining)
     fillQuestion(quizStats.currentQuestion);
-}
-/**
- * 
- * @param {object} data  must be in the form of a quiz json file
- * @param {object} stats must be in the form of a quiz stats file
- */
-function chooseQuestions(data, stats) {
-    let questionNumArray = genUnorderedIntArray(stats.questionsPerQuiz);
-    for (let i in questionNumArray) {
-        questionArray[i].question = data.questions.question[questionNumArray];
-    }
 }
 
 /**
@@ -123,9 +179,9 @@ function chooseQuestions(data, stats) {
  */
 function createAnswerDivs(count) {
     let htmlString = "";
-    for (let i in quizData[count].answers) {
+    for (let i in quizQuestions[count].answers) {
         // the id of the answer div identifies its position in the div array and tells whether it's the correct answer or not.
-        htmlString += `<button id="` + i + `-` + quizData[count].answers[i][1] + `" class="answer-option">` + quizData[count].answers[i][0] +
+        htmlString += `<button id="` + i + `-` + quizQuestions[count].answers[i][1] + `" class="answer-option">` + quizQuestions[count].answers[i][0] +
             `</button>`;
     }
 
@@ -134,14 +190,12 @@ function createAnswerDivs(count) {
 
 /**
  * 
- * @param {integer} count The number of questions contained in the quiz.
+ * @param {integer} 'count' The number of questions contained in the quiz.
  */
 function fillQuestion(count) {
-    console.log("count: " + count)
-    document.getElementById('question-text').innerHTML = quizData[count].question;
+    document.getElementById('question-text').innerHTML = quizQuestions[count].question;
     createAnswerDivs(count);
     quizStats.currentQuestion++;
-    console.log("currentQuestion: " + quizStats.currentQuestion);
     quizStats.started = true;
     if (quizStats.totalQuestions === 1) {
         // Just one question
@@ -181,7 +235,6 @@ function setupAnswerClickHandler() {
                 fillQuestion(quizStats.currentQuestion);
             } else {
                 announceResults(quizStats);
-                console.log("Finished on evaluating last answer: " + quizStats.finished);
             }
         }
     });
@@ -230,8 +283,16 @@ function announceResults(stats) {
         document.getElementById("running-total").innerHTML = `You answered ${stats.correctAnswers} ${stats.questionsCorrectString} correctly out of 
         ${stats.totalQuestions}. <br>${feedbackString}`;
     };
-    document.getElementById("start-quiz-btn").innerHTML = "Do the quiz again";
-    quizStats.finished = true;
+    if (fullQuestionData.length === 0) {
+        document.getElementById("start-quiz-btn").disabled = true;
+        document.getElementById("start-quiz-btn").style.backgroundColor = 'gray';
+        document.getElementById("start-quiz").style.backgroundColor = 'gray';
+        document.getElementById("start-quiz-btn").innerHTML = "No questions left";
+        document.getElementById("running-total").innerHTML = document.getElementById("running-total").innerHTML + `<br><br><span id="all-done">There are no more questions available for the moment. To start again, refresh the page!</span>`;
+    } else {
+        document.getElementById("start-quiz-btn").innerHTML = "Do another quiz";
+        quizStats.finished = true;
+    }
 }
 
 function implementCollapsibleTexts(className) {

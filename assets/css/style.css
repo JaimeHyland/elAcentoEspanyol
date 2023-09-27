@@ -145,9 +145,8 @@ main {
 }
 
 .summary-modal {
-    display: none;
     position: fixed;
-    z-index: 1;
+    z-index: 99;
     left: 20px;
     top: 130px;
     width: fit-content;
@@ -177,8 +176,9 @@ main {
 }
 
 
-.summaryModal li {
+.summary-Modal li {
     list-style-type: square;
+
 }
 
 
@@ -255,6 +255,10 @@ main {
 #running-total {
     margin: 10px 20px;
     text-align: center;
+}
+
+#all-done {
+    color:#e07a5f;
 }
 
 .answer-correct {
