@@ -1,8 +1,8 @@
 <base target="_blank">
 
-# El acento español - A site to revise when to write accents in Spanish
+# El acento español - A site to revise the rules on when to write accents in Spanish
 
-## Code Institute - First Milestone Project: Create an interactive and responsive front-end website according to UX principles with HTML, CSS and JavaScript technologies.
+## Code Institute - Second Milestone Project: Create an interactive and responsive front-end website according to UX principles with HTML, CSS and JavaScript technologies.
 
 ![Image of the website on various screen sizes](assets/readme-assets/screenselection.png)
 
@@ -94,7 +94,6 @@ As the site owner, I will expect to:
 - include links to the various accounts of my language school on social media.
 
 ### A note on the language used
-
 The target users of this website will all be competent users of Spanish and will be on this site to help them in their language learning process. However, many will not be very advanced learners. The language of the site would therefore ordinarily be what's often referred to as simplified Spanish. The only reason it is in English is to **facilitate the site's assessors**. I'd therefore like the assessors to take into account that the whole site will be rendered in simplified Spanish as soon as feasible after assessment has been completed.
 - - -
 

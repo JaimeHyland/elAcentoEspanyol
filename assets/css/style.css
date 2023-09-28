@@ -150,7 +150,8 @@ main {
 .flash-cards {
     display: flex;
     flex-direction: column;
-    max-width: 250px;
+    max-width: 230px;
+    min-width: 150px;
     flex-wrap: wrap;
     flex-basis: 120px;
     flex-grow: 1;
@@ -290,7 +291,7 @@ main {
 }
 
 #answer-options {
-    margin: 5% 10px;
+    margin: 20px 5%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
@@ -319,11 +320,6 @@ main {
     color: #e07a5f;
     font-weight: bold;
 }
-
-.answer-correct {
-    display: none;
-}
-
 
 
 .xtraCollapsible,
@@ -491,6 +487,14 @@ address {
         max-width: 80px;
     }
 
+    #site-heading {
+        font-size: 1.25em;
+    }
+
+    #site-subheading {
+        font-size: 1.17em;
+    }
+
     #link-to-info-modal {
         max-height: 80px;
     }
@@ -503,10 +507,20 @@ address {
         display: none;
     }
 
+    /* main */
+
+    main {
+        margin-top: 100px;
+    }
+
     .summary-modal {
         max-width: 460px;
     }
 
+    /** Keep answer options grouped close together **/
+    #answer-options {
+        margin: 20px 15%;;
+    }
 
 }
 
@@ -515,6 +529,10 @@ address {
     .summary-modal {
         max-width: 480px;
         left: 15%;
+    }
+
+    #answer-options {
+        margin: 20px 20%;
     }
 
 }
@@ -526,6 +544,10 @@ address {
         max-width: 500px;
         left: 22%;
     }
+
+    #answer-options {
+        margin: 20px 25%;;
+    }
 }
 
 
@@ -533,6 +555,10 @@ address {
 @media screen and (min-width: 960px) {
     .summary-modal {
         left: 28%;
+    }
+
+    #answer-options {
+        margin: 20px 28%;;
     }
 }
 
@@ -542,8 +568,16 @@ address {
     .summary-modal {
         left: 35%;
     }
+
+    #answer-options {
+        margin: 20px 35%;;
+    }
 }
 
 
 /* Larger desktops and larger */
-@media screen and (min-width: 1500px) {}
+@media screen and (min-width: 1500px) {
+    #answer-options {
+        margin: 20px 40%;;
+    }
+}
