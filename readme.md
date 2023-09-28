@@ -151,11 +151,11 @@ The shadows are strong and dark, reflecting Spanish "sol y sombra" (sun and shad
 
 <!-- TOC --><a name="responsiveness"></a>
 ### Responsiveness
-- The website is fully responsive over all tested screen on both portrait and landscape orientations, where applicable (see [Testing](testing) section below).
+- The website is fully responsive over all tested screen on both portrait and landscape orientations, where applicable (see the [Testing](#testing) section below).
 
 <!-- TOC --><a name="favicons"></a>
 ### Favicons
-Appropriate favicon images were created on the basis of the site logo (see [Images](images) below), using Inkscape to create a 920 x 920px png file and converting it using [favicon.io/favicon-converter](https://favicon.io/favicon-converter/). The favicon design was created on the basis of the logo (see [Images](images) below). 
+Appropriate favicon images were created on the basis of the site logo (see [Images](images) below), using Inkscape to create a 920 x 920px png file and converting it using [favicon.io/favicon-converter](https://favicon.io/favicon-converter/). The favicon design was created on the basis of the logo (see [Images](#images) below). 
 <!-- TOC --><a name="images"></a>
 ### Images
 - The website contains two non font-icon-type image: 
@@ -196,7 +196,7 @@ The steps for deploying the website to its github host pages are as follows:
 - Select 'Deploy from a branch' from the drop-down list labelled 'Source'.
 - Select 'main' as your branch, select 'main' from the drop-down list and Save.
 - The URL of the site then follows the usual pattern for sites deployed using github: "https://\[userName\].github.io/\[repositoryName\]l/
-- Then on your github repository page, click on "github-page" under "Deployments" on the right of the screen to get to page listing all deployments from this repository. The click on the !(view deployment button)[assets/readme-assets/viewDeployment.png] shown to the right of your latest deployment.
+- Then on your github repository page, click on "github-page" under "Deployments" on the right of the screen to get to page listing all deployments from this repository. The click on the "view deployment button" shown on the extreme right of the line showing your latest deployment (i.e. the top line).
 - The site will then update automatically every time you push a new commit to the master branch.
 
 - - -
@@ -207,9 +207,9 @@ The steps for deploying the website to its github host pages are as follows:
 ### Wireframe
 ![The original wireframe sketches for the site's homepage](assets/readme-assets/wireframe-mockup.png)
 
-The design process began by creating a low-resolution wireframe using [Balsamiq](https://balsamiq.com/). Since the programming paradigm (see [Sequence of coding steps](sequence-of-coding-steps) below) was "mobile-first", and since the website consists effectively of a solitary homepage, a single wireframe was made for each of the sections of the main page as viewed via a no-name mobile phone screen. During the course of development, significant deviations were made to the visual layout for mobile devices. There were also significant changes for responsiveness to various viewport resolutions, based on learning experiences during work on the project and advice and guidance from my mentor, etc..
+The design process began by creating a low-resolution wireframe using [Balsamiq](https://balsamiq.com/). Since the programming paradigm (see [Sequence of coding steps](#sequence-of-coding-steps) below) was "mobile-first", and since the website consists effectively of a solitary homepage, a single wireframe was made for each of the sections of the main page as viewed via a no-name mobile phone screen. During the course of development, significant deviations were made to the visual layout for mobile devices. There were also significant changes for responsiveness to various viewport resolutions, based on learning experiences during work on the project and advice and guidance from my mentor, etc..
 
-The original wireframe design (with the accompanying rough notes) can be found [here](documentation/Robotics-Agriculture-Wireframe.pdf)(in pdf format).
+The original wireframe design (with the accompanying rough notes) can be found [here](documentation/Robotics-Agriculture-Wireframe.pdf) (in pdf format).
 
 <!-- TOC --><a name="sequence-of-coding-steps"></a>
 ### Sequence of coding steps
@@ -306,7 +306,7 @@ Some functionality is incomplete in the project, especially the following:
 <!-- TOC --><a name="-for-lack-of-time-skill-andor-data"></a>
 ### ... for lack of time and/or skill
 The limited time available to me has meant that:
-- I would like to have implemented one or two more features based on modal dialogs, particularly to position them near the click event that called them and to hide them by clicking/tapping elsewhere on the screen, rather than clicking on &time;.
+- I would like to have implemented one or two more features based on modal dialogs, particularly to position them near the click event that called them and to hide them by clicking/tapping elsewhere on the screen, rather than clicking on X.
 - I would have liked to implement a link between the modal flashcards and their respective lessons. It wasn't to be.
 - I would have liked to complete implementation of a spot check of understanding at the bottom of each lesson. I was unable to do so in time for submission. The scars of my attempts to implement this feature are still to be seen in my json file and in the index.html.
 - The styling of the lesson sections is very primitive. I'd have liked to do more work on that too.
