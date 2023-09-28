@@ -183,7 +183,7 @@ main {
 }
 
 .summary-modal {
-    position: absolute;
+    position: fixed;
     top: 20%;
     left: 10%;
     flex-direction: column;
@@ -213,7 +213,7 @@ main {
     background-color: rgba(243, 245, 122, 0.9);
     width: 100%;
     text-align: right;
-    height: 30;
+    height: 30px;
 }
 
 .fc-main {
@@ -296,7 +296,7 @@ main {
     flex-direction: row;
     justify-content: space-evenly;
     color: #e07a5f;
-    text-shadow: #eed090;
+    text-shadow: 2px 2px 2px #eed090;
 }
 
 .answer-option {

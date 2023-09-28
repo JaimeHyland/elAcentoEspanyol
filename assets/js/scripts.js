@@ -249,12 +249,14 @@ function announceResults(stats) {
     } else {
         feedbackString = "If you'd chosen your answers at random, you'd probably have done better! I'm afraid it's back to the drawing board!";
         document.getElementById('answer-options').innerHTML = "<h2>¡Ups!</h2>";
-    };
+    }
+
     // allow for singular and plurals in result
     stats.questionsCorrectString = "questions";
     if (stats.correctAnswers === 1) {
         stats.questionsCorrectString = "question";
-    };
+    }
+
     if (stats.totalQuestions === 1) {
         if (correctAnswers === 0) {
             document.getElementById("running-total").innerHTML = `Hard luck! You got the question wrong!`;
@@ -264,7 +266,8 @@ function announceResults(stats) {
     } else {
         document.getElementById("running-total").innerHTML = `You answered ${stats.correctAnswers} ${stats.questionsCorrectString} correctly out of 
         ${stats.totalQuestions}. <br>${feedbackString}`;
-    };
+    }
+
     if (fullQuestionData.length === 0) {
         document.getElementById("start-quiz-btn").disabled = true;
         document.getElementById("start-quiz-btn").style.backgroundColor = 'gray';

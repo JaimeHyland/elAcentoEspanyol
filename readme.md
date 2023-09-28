@@ -304,14 +304,14 @@ Some functionality is incomplete in the project, especially the following:
 - All addresses are fictional.
 
 <!-- TOC --><a name="-for-lack-of-time-skill-andor-data"></a>
-### ... for lack of time, skill and/or data
-Pressure of time and my current ignorance of the finer points of aesthetic web design has meant that:
-- I haven't been able to use a complex range of tints, much less adopt and implement a fully-fledged colour palette.
-- I would like to have implemented one or two more features based on modal dialogs, particularly on positioning them near the click event that called them and on removing them from screen by clicking/tapping elsewhere on the screen,
-- I would have liked to implement a link between the modal flashcards and their respective lessons, but couldn't due to lack of time.
+### ... for lack of time and/or skill
+The limited time available to me has meant that:
+- I would like to have implemented one or two more features based on modal dialogs, particularly to position them near the click event that called them and to hide them by clicking/tapping elsewhere on the screen, rather than clicking on &time;.
+- I would have liked to implement a link between the modal flashcards and their respective lessons. It wasn't to be.
 - I would have liked to complete implementation of a spot check of understanding at the bottom of each lesson. I was unable to do so in time for submission. The scars of my attempts to implement this feature are still to be seen in my json file and in the index.html.
 - The styling of the lesson sections is very primitive. I'd have liked to do more work on that too.
-- I originally intended to add a _scroll-to-top_ bar and to make the site icon in the header bring the user back to the top of the site. Again, the issue was lack of time.
+- I originally intended to add a _scroll-to-top_ bar and to make the site icon in the header bring the user back to the top of the site.
+- The colour-scheme could do with some adjustment.
 
 - - -
 
