@@ -1,7 +1,9 @@
 import jsonData from './quiz.json' assert {type: 'json'};
 
-//Colors for randomly colored buttons and divs. They are identical, but could of course be different!
+
 let modalOpen = false; //only one modal may open at at time!
+
+//Colors for randomly colored buttons and divs. They are identical, but could of course be different!
 let collapsibleColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 let lessonLinkColorScheme = [['#fabe00', '#6d4038'], ['#008bae', '#f2f3ae'], ['#be4334', '#f7eedd'], ['#eed090', '#2e744b'], ['#2e744b', '#eed090']];
 
@@ -19,14 +21,14 @@ let quizStats = {
     'started': false,
 };
 
-let fullQuestionData; //all the quiz questions in the quiz.json file that remain to be put in a quiz
+let fullQuestionData; //all the quiz questions in the quiz.json file that remain to be put in a quiz (each question is removed when it's included in a quiz)
 let quizQuestions; //the questions chosen for the current quiz
 
 try {
     fullQuestionData = QuestionsFromData(jsonData);
     quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
 } catch (error) {
-    window.alert(error + "<br>It looks like the quiz.json file you're using doesn't have any quiz questions in in the right format!");
+    window.alert(error + "<br>It looks like the quiz.json file you're using doesn't contain any quiz questions in the right format!");
 }
 
 
@@ -40,14 +42,16 @@ function QuestionsFromData(data) {
     return quizQuestions;
 }
 
-//shuffles the questions and returns the first num of them, deleting the ones it has selected.
+//shuffles the questions and returns the first 'num' of them, deleting the ones it has selected.
 /**
  * 
- * @param {object} 'questions' the object containing the questions to be shuffled
- * @param {int} 'num' the number of questions you want to extract from the full set of questions
+ * @param {object} questions is the object containing the questions to be shuffled
+ * @param {int} num is the number of questions you want to extract from the full set of questions
  * @returns a num-sized array of questions in random order
  */
 function shuffleAndSelectQuestions(questions, num) {
+
+    //if there are less than ten questions left, select all of them
     if (num > questions.length) {
         num = questions.length;
     }
@@ -60,6 +64,7 @@ function shuffleAndSelectQuestions(questions, num) {
     return questions;
 }
 
+//a clean sweep before next quiz
 function reinitializeQuiz() {
     quizStats.totalQuestions = 0;
     quizStats.currentQuestion = 0;
@@ -75,8 +80,8 @@ function reinitializeQuiz() {
 document.getElementById("start-quiz-btn").addEventListener("click", function () {
     if (quizStats.finished) {
         quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
-        console.log("fullQuestionData.length; " + fullQuestionData.length)
         gatherQuizStats();
+        document.getElementById("start-quiz-btn").innerHTML = "Hide Quiz";
     } else {
         showHideQuiz();
     }
@@ -86,25 +91,15 @@ document.getElementById("start-quiz-btn").addEventListener("click", function () 
 document.getRootNode().addEventListener("DOMContentLoaded", function () {
     showHideQuiz();
     hideFlashCards();
-    let flashCards = document.getElementsByClassName("summary-modal")
-    console.log("DOMContentLoaded event triggered!")
-    console.log(flashCards[0].style.display);
-    console.log(flashCards[1].style.display);
-    console.log(flashCards[2].style.display);
-    console.log(flashCards[3].style.display);
-    console.log(flashCards[4].style.display);
 });
 
 //Event handler for info link icon on header
-document.getElementById("link-to-info-modal").addEventListener("click", function () {
-    if (modalOpen === false) {
-        document.getElementById("how-to-use").style.display = "block";
-    }
-});
 
+
+//Hide the flashCards initially
 function hideFlashCards() {
     let flashCards = document.getElementsByClassName("summary-modal");
-    for (let i = 0; i < flashCards.length; i++)  {
+    for (let i = 0; i < flashCards.length; i++) {
         flashCards[i].style.display = "none";
     }
 }
@@ -113,41 +108,28 @@ function hideFlashCards() {
 function addEventListenersToSummaryLinks() {
     let linkDivs = document.getElementsByClassName("link-for-summary");
     for (let i = 0; i < linkDivs.length; i++) {
-        let summaryNum = i + 1;
-        linkDivs[i].addEventListener("click", function (Event) {
-            let flashCard = document.getElementById("summary" + summaryNum)
-            flashCard.style.display = `block`;
-            console.log(`flashCard[${summaryNum}].style.display: ` + flashCard.style.display);
-
-            let touch;
-            if (Event.touches) {
-                touch = Event.touches[0];
+        let summaryNum = i;
+        linkDivs[i].addEventListener("click", function () {
+            if (modalOpen === false) {
+                console.log(summaryNum);
+                document.getElementById("summary" + summaryNum).style.display = "flex";
+                addEventListenerToFlashCardXButton("close", summaryNum);
+                modalOpen = true;
             } else {
-                touch = Event;
+                window.alert("To open this flash card, close the one that's already open?");
             }
-
-            let fcHeight = flashCard.clientHeight;
-            let fcWidth = flashCard.clientWidth;
-            let topPosition = touch.clientY - fcHeight/2;
-            let leftPosition = touch.clientX - fcWidth/2;
-            let fcTop = Math.max(0, topPosition);
-            let fcLeft = Math.max(0, leftPosition);
-            
-        
-            flashCard.style.top = `${fcTop}px`;
-            flashCard.style.left = `${Math.max(0, )}px`;
-            console.log("flashCard[${summaryNum}].style.top: " + flashCard.style.top);
-            console.log("flashCard[${summaryNum}].style.left: " + flashCard.style.left);
-            document.addEventListener("click", function closeOnClickOutside(e) {
-                if (!flashCard.contains(e.target)) {
-                    flashCard.style.display = "none";
-                    document.removeEventListener("click", closeOnClickOutside);
-                    console.log("Event listener added")
-                }
-            });
         });
     }
 }
+
+function addEventListenerToFlashCardXButton(idString, num) {
+    let clickableElement = document.getElementById(idString + num);
+    clickableElement.addEventListener("click", function () {
+        document.getElementById("summary" + num).style.display = "none";
+        modalOpen = false;
+    });
+}
+
 
 //The 'if' condition fires if the quiz-title is either visible or not yet set (the latter for first firing)
 function showHideQuiz() {
@@ -342,7 +324,7 @@ function genOrderedIntArray(from, to) {
 }
 
 chooseColorSchemes(document.getElementsByClassName('collapsible'), collapsibleColorScheme);
-chooseColorSchemes(document.getElementsByClassName('link-for-summary'), lessonLinkColorScheme);
+chooseColorSchemes(document.getElementsByClassName('flash-cards'), lessonLinkColorScheme);
 gatherQuizStats();
 setupAnswerClickHandler();
 addEventListenersToSummaryLinks();

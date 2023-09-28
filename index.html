@@ -2,6 +2,12 @@
 <html lang="en">
 
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Kalam&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap"
+        rel="stylesheet">
+
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/style.css">
@@ -34,97 +40,115 @@
                 <h1 id="site-heading">El <em>acento</em> español</h1>
                 <p id="site-subheading">Five lessons on using the <em>acento</em> in Spanish</p>
             </div>
-            <div id="link-to-info-modal" class="clickable">
+            <div id="link-to-info-modal" class="link-for-summary clickable">
                 <i class="fa-solid fa-circle-info fa-2xl"></i>
             </div>
         </header>
 
         <main>
-            <div class="summary-modal" id="how-to-use">
-                <h3>How to use this site</h3>
-                <p>At the top of this website you'll find links to five revision flash cards on use of the <em>acento</em>. Below
-                    those links you'll find a quiz to check what you've learned.</p>
-                <p>The site also provides a quiz for you to put your knowledge into practice.</p>
-                <p>Just click on the <em>Show Revision Quiz</em> button to begin your quiz.</p>
-            </div>
             <div id="summary-container">
-                <div class="link-for-summary" id="lesson-1">
+                <div class="link-for-summary flash-cards" id="lesson-1">
                     <div class="lesson-name">
                         <h4> Card One &mdash; <em>palabras agudas</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-1"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="summary-modal" id="summary1">
-                    <span class="close">&times;</span>
-                    <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
-                    <p>they end with a consonant other than n or s;</p>
-                    <p>otherwise they do.</p>
-                </div>
 
-                <div class="link-for-summary" id="Lesson-2">
+                <div class="link-for-summary flash-cards" id="Lesson-2">
                     <div class="lesson-name">
                         <h4> Card Two &mdash; <em>palabras llanas</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-2"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="summary-modal" id="summary2">
-                    <span class="close">&times;</span>
-                    <p>Palabras llanas <strong>need</strong> acentos if:</p>
-                    <p>they end with a consonant other than n or s</p>
-                    <p>otherwise they don't need them</p>
-                    <p>Exception: if the last letter is "n" or s and the second-last letter is a consonant, they need an
-                        acento on the second-last syllable ("wéstern")</p>
-                </div>
-
-                <div class="link-for-summary" id="Lesson-3">
+                <div class="link-for-summary flash-cards" id="Lesson-3">
                     <div class="lesson-name">
                         <h4> Card Three &mdash; <em>palabras esdrújulas</em> etc. </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-3"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-                <div class="summary-modal" id="summary3">
-                    <span class="close">&times;</span>
-                    <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
-                    <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
-                </div>
-                <div class="link-for-summary" id="Lesson-4">
+                <div class="link-for-summary flash-cards" id="Lesson-4">
                     <div class="lesson-name">
                         <h4> Card Four &mdash; <em>distinguishing homonyms</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-4"><i class="fa-solid fa-list-check fa-xl"></i></div>
                 </div>
-
-                <div class="summary-modal" id="summary4">
-                    <span class="close">&times;</span>
-                    <p>Question words need acentos</p>
-                    <p>Pronouns need acentos if they have homophones meaning something different.</p>
-                    <p>You need to remember the other words that have acentos to distinguish them from their homophones.
-                    </p>
-                </div>
-                <div class="link-for-summary" id="Lesson-5">
+                <div class="link-for-summary flash-cards" id="Lesson-5">
                     <div class="lesson-name">
                         <h4> Card Five &mdash; <em>Dipthongs, tripthongs &amp; hiatuses</em> </h4>
                     </div>
                     <div class="icon-for-summary" id="summary-5"><i class="fa-solid fa-list-check fa-xl"></i></div>
-
-                    <div class="summary-modal" id="summary5">
-                        <span class="close">&times;</span>
-                        <ul>
-                            <li>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as
-                                any other vowels.</li>
-                            <li>Dipthong with two weak vowels: acento (where needed) on second vowel</li>
-                            <li>Dipthongs never contain two strong vowels</li>
-                            <li>Otherwise put the acento (where needed) on the strong vowel.</li>
-                            <li>Stressed tripthongs always have their acento (where needed) on the strong vowel</li>
-                            <li>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables
-                            </li>
-                        </ul>
-                    </div>
                 </div>
             </div>
+            <div class="summary-modal" id="summary0">
+                <div class="fc-header"><span class="close" id="close0">&times;</span></div>
+                <div class="fc-main">
+                    <h3>How to use this site</h3>
+                    <p>At the top of this website you'll find links to five revision flash cards on use of the
+                        <em>acento</em>. Below
+                        those links you'll find a quiz to check what you've learned.
+                    </p>
+                    <p>The site also provides a quiz for you to put your knowledge into practice.</p>
+                    <p>Just click on the <em>Show Revision Quiz</em> button to begin your quiz.</p>
+                </div>
+            </div>
+            <div class="summary-modal" id="summary1">
+                <div class="fc-header"><span class="close" id="close1">&times;</span></div>
+                <div class="fc-main">
+                    <p>Palabras agudas <strong>don't</strong> need acentos if:</p>
+                    <p>they end with a consonant other than n or s;</p>
+                    <p>otherwise they do.</p>
+                </div>
+                <div class="fc-footer">Go to full lesson</span></div>
+            </div>
+            <div class="summary-modal" id="summary2">
+                <div class="fc-header"><span class="close" id="close2">&times;</span></div>
+                <div class="fc-main">
+                    <p>Palabras llanas <strong>need</strong> acentos if:</p>
+                    <p>they end in a consonant other than n or s</p>
+                    <p>otherwise they don't need them</p>
+                    <p>Exception: if the last letter is "n" or "s" and the second-last letter is another consonant, they need an
+                        acento on the second-last syllable (e.g. "wéstern")</p>
+                </div>
+                <div class="fc-footer">Go to full lesson</span></div>
+            </div>
+            <div class="summary-modal" id="summary3">
+                <div class="fc-header"><span class="close" id="close3">&times;</span></div>
+                <div class="fc-main">
+                    <p>Palabras esdrújulas and sobreesdrújulas <strong>always</strong> need an acento!</p>
+                    <p>Exception: words ending with -mente only need an acento if their base word needs an acento</p>
+                </div>
+                <div class="fc-footer">Go to full lesson</span></div>
+            </div>
+            <div class="summary-modal" id="summary4">
+                <div class="fc-header"><span class="close" id="close4">&times;</span></div>
+                <div class="fc-main">
+                    <p>Question words need acentos</p>
+                    <p>Pronouns need acentos if they have homophones meaning something different.</p>
+                    <p>You need to remember the other words that have acentos to distinguish them from their homophones.
+                    </p>
+                    <div class="fc-footer">Go to full lesson</span></div>
+                </div>
+            </div>
+            <div class="summary-modal" id="summary5">
+                <div class="fc-header"><span class="close" id="close5">&times;</span></div>
+                <div class="fc-main">
+                    <ul>
+                        <li>Dipthongs and tripthongs follow <strong>the same rules</strong> on written acentos as
+                            any other vowels.</li>
+                        <li>Dipthong with two weak vowels: acento (where needed) on second vowel</li>
+                        <li>Dipthongs never contain two strong vowels</li>
+                        <li>Otherwise put the acento (where needed) on the strong vowel.</li>
+                        <li>Stressed tripthongs always have their acento (where needed) on the strong vowel</li>
+                        <li>Placing an acento anywhere else ona dipthong or tripthong splits it into two syllables
+                        </li>
+                    </ul>
+                </div>
+                <div class="fc-footer">Go to full lesson</span></div>
+            </div>
+
             <div id="start-quiz">
                 <button type="button" id="start-quiz-btn">Start revision quiz!</button>
-                </div>
+            </div>
             <h2 id="quiz-title">Revision Quiz</h2>
             <div id="question-container">
                 <div class="question">
@@ -155,7 +179,8 @@
                 <p>Don't put a written accent on words with a <strong>stress on their last syllable</strong> (the Real
                     Academia de
                     la Lengua Espanola call them <em>palabras agudas</em>) unless they end with a consonant other than
-                    <em>n</em> or <em>s</em>.</p>
+                    <em>n</em> or <em>s</em>.
+                </p>
 
                 <p>If they end with an <em>n</em> or an <em>s</em>, or with a vowel, you need to put the written accent
                     on the stressed vowel.</p>
@@ -319,8 +344,9 @@
                         their root needs one.
                     </li>
                 </ul>
-                <p>Effectively what this rule means is that you should add -mente (as required by the <a href=""target="_blank" ></a>applicable rules),
-                leaving any written accent that was already on the root untouched.</p>
+                <p>Effectively what this rule means is that you should add -mente (as required by the <a href=""
+                        target="_blank"></a>applicable rules),
+                    leaving any written accent that was already on the root untouched.</p>
                 <h5>SO ...</h5>
 
                 <ul>

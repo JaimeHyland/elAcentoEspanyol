@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Hind:wght@300;400;500;600;700&family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;1,100;1,200;1,300;1,400&display=swap');
 
+
 * {
     padding: 0;
     margin: 0;
@@ -13,8 +14,6 @@ html {
 
 body {
     top: 40px;
-    display: flex;
-    flex-direction: column;
     min-height: 100%;
     max-width: 1200px;
     background: #f7eedd;
@@ -145,38 +144,49 @@ main {
 }
 
 .summary-modal {
-    position: fixed;
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    flex-direction: column;
+    font-family: 'Kalam', cursive;
+    border: solid .25px #5e463c;
+    box-shadow: 2px 2px 1px #5e463c;
+    border-radius: 2px;
     z-index: 99;
-    left: 20px;
-    top: 130px;
     width: fit-content;
     max-width: 320px;
     height: fit-content;
     overflow: auto;
     background-color: rgba(242, 243, 174, .9);
     color: #5e463c;
-    padding: 15px 15px 15px 30px;
+    padding: 0;
+}
 
-    /* Black w/ opacity */
+.fc-header{
+    background-color: rgba(243, 245, 122, 0.9);
+    width: 100%;
+    text-align: right;
+    height: 30;
 }
 
 /* Close Button on modal */
 .close {
-    color: #aaaaaa;
-    float: right;
+    color: #241f1f;
     font-size: 28px;
+    transition: transform .2s;
     font-weight: bold;
-}
-
-.close:hover,
-.close:focus {
-    color: #000;
-    text-decoration: none;
     cursor: pointer;
+    margin-right: 15px;
+}
+
+.close:hover {
+    color: #ed6262;
+    text-decoration: none;
+    transform: scale(1.1);
 }
 
 
-.summary-Modal li {
+.summary-modal li {
     list-style-type: square;
 
 }
@@ -276,7 +286,7 @@ main {
     justify-content: center;
 }
 
-.link-for-summary {
+.flash-cards {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
@@ -297,7 +307,7 @@ main {
     box-shadow: 6px 6px 2px #5e463c;
 }
 
-.link-for-summary:hover {
+.flash.cards:hover {
     transform: scale(1.05);
 }
 
@@ -349,7 +359,7 @@ main {
     text-align: center;
 }
 
-.link-for-summary,
+.flash-cards,
 .icon-for-summary {
     margin: 15px 5px;
 }
@@ -369,7 +379,7 @@ footer {
     max-width: 1200px;
     color: #ffe9c7;
     background-color: #5e463c;
-    box-shadow: 0px -2px 4px #5e463c;
+    border-top:solid 1px #81b29a
 }
 
 footer>ul#social-networks {

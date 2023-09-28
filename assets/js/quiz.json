@@ -170,7 +170,7 @@
       ]
     },
     {
-      "question": "El Juanjo _________ sus perros.",
+      "question": "El Juanjo _________ a sus perros.",
       "answers": [
         [
           "maltrata",
@@ -209,7 +209,7 @@
       ]
     },
     {
-      "question": "Todos estos trozos de ágata fueron _________ de una mina en una zona remota del estado norteaméricano de Montana.",
+      "question": "Todas estas piezas de ágata fueron _________ de una mina en una zona remota del estado norteaméricano de  y pulidas aquí.",
       "answers": [
         [
           "extráidos",
@@ -364,7 +364,7 @@
       ]
     },
     {
-      "question": "Mañana podremos jugar un rato ___________, ahora ya estoy muy cansadísima.",
+      "question": "Mañana podremos jugar un rato ___________; ahora ya estoy cansadísima.",
       "answers": [
         [
           "mas",
@@ -390,7 +390,7 @@
       ]
     },
     {
-      "question": "Este trozo no tiene buena pinta, toma __________.",
+      "question": "Ese trozo no tiene buena pinta, toma __________.",
       "answers": [
         [
           "este",
@@ -490,7 +490,7 @@
       ]
     },
     {
-      "question": "La señora Etxebarria ha tenido mucho éxito en el __________ de la ngeniería ligera.",
+      "question": "La señora Etxebarria ha tenido mucho éxito en el __________ de la ingeniería ligera.",
       "answers": [
         [
           "ambito",
