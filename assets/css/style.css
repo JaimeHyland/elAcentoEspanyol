@@ -137,6 +137,44 @@ main {
     max-width: 1200px;
 }
 
+/** Summary-container **/
+#summary-container {
+    display: flex;
+    width: 100%;
+    margin: 20px 0;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.flash-cards {
+    display: flex;
+    flex-direction: column;
+    max-width: 250px;
+    flex-wrap: wrap;
+    flex-basis: 120px;
+    flex-grow: 1;
+    transition: transform .2s;
+    justify-items: center;
+    align-items: center;
+    border: 1px solid #5e463c;
+    padding: 2px;
+    margin: 2vw;
+    height: 150px;
+    width: 40vw;
+    justify-content: center;
+    cursor: pointer;
+    align-content: center;
+    border-radius: 6px;
+    box-shadow: 6px 6px 2px #5e463c;
+}
+
+.flash.cards:hover {
+    transform: scale(1.05);
+}
+
+
+/** Modals **/
 #link-to-info-modal {
     max-height: 60px;
     padding-right: 10px;
@@ -145,8 +183,8 @@ main {
 
 .summary-modal {
     position: absolute;
-    top: 30%;
-    left: 20%;
+    top: 20%;
+    left: 10%;
     flex-direction: column;
     font-family: 'Kalam', cursive;
     border: solid .25px #5e463c;
@@ -162,11 +200,27 @@ main {
     padding: 0;
 }
 
-.fc-header{
+.summary-modal ul {
+    list-style: square inside;
+}
+
+.summary-modal li {
+    padding: 0 0 10px 20px;
+}
+
+.fc-header {
     background-color: rgba(243, 245, 122, 0.9);
     width: 100%;
     text-align: right;
     height: 30;
+}
+
+.fc-main {
+    margin: 10px;
+}
+
+.fc-footer p {
+    text-align: center;
 }
 
 /* Close Button on modal */
@@ -183,12 +237,6 @@ main {
     color: #ed6262;
     text-decoration: none;
     transform: scale(1.1);
-}
-
-
-.summary-modal li {
-    list-style-type: square;
-
 }
 
 
@@ -268,7 +316,8 @@ main {
 }
 
 #all-done {
-    color:#e07a5f;
+    color: #e07a5f;
+    font-weight: bold;
 }
 
 .answer-correct {
@@ -276,40 +325,6 @@ main {
 }
 
 
-/** Summary-container **/
-#summary-container {
-    display: flex;
-    width: 100%;
-    margin: 20px 0;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: center;
-}
-
-.flash-cards {
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    flex-basis: 120px;
-    flex-grow: 1;
-    transition: transform .2s;
-    justify-items: center;
-    align-items: center;
-    border: 1px solid #5e463c;
-    padding: 2px;
-    margin: 2vw;
-    height: 150px;
-    width: 40vw;
-    justify-content: center;
-    cursor: pointer;
-    align-content: center;
-    border-radius: 6px;
-    box-shadow: 6px 6px 2px #5e463c;
-}
-
-.flash.cards:hover {
-    transform: scale(1.05);
-}
 
 .xtraCollapsible,
 .collapsible {
@@ -379,7 +394,7 @@ footer {
     max-width: 1200px;
     color: #ffe9c7;
     background-color: #5e463c;
-    border-top:solid 1px #81b29a
+    border-top: solid 1px #81b29a
 }
 
 footer>ul#social-networks {
@@ -461,3 +476,74 @@ address {
     padding: 8px 0;
     font-weight: bolder;
 }
+
+
+/* Media query: large-screen phones or landscape views and larger (576px and upwards) */
+@media screen and (min-width: 576px) {
+
+    /** header **/
+    header {
+        justify-content: space-around;
+    }
+
+    #icon {
+        max-height: 80px;
+        max-width: 80px;
+    }
+
+    #link-to-info-modal {
+        max-height: 80px;
+    }
+
+    #link-to-info-modal i {
+        font-size: 2.6em;
+    }
+
+    #conditional {
+        display: none;
+    }
+
+    .summary-modal {
+        max-width: 460px;
+    }
+
+
+}
+
+/* Make cover-text visible on mobile in landscape mode */
+@media screen and (min-width: 576px) and (max-height: 670px) {
+    .summary-modal {
+        max-width: 480px;
+        left: 15%;
+    }
+
+}
+
+
+/* Media query: tablets and larger (768px and up) */
+@media screen and (min-width: 768px) {
+    .summary-modal {
+        max-width: 500px;
+        left: 22%;
+    }
+}
+
+
+/* Medium-screen devices (laptops and smaller desktop screens) and larger, 960px and up) */
+@media screen and (min-width: 960px) {
+    .summary-modal {
+        left: 28%;
+    }
+}
+
+
+/* larger laptops, desktops and larger */
+@media screen and (min-width: 1200px) {
+    .summary-modal {
+        left: 35%;
+    }
+}
+
+
+/* Larger desktops and larger */
+@media screen and (min-width: 1500px) {}
