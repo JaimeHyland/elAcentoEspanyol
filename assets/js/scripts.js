@@ -1,5 +1,5 @@
-import jsonData from './quiz.json' assert {type: 'json'};
-
+// import jsonData from './quiz.json' assert {type: 'json'};
+let jsonData;
 
 let modalOpen = false; //only one modal may open at at time!
 
@@ -24,12 +24,41 @@ let quizStats = {
 let fullQuestionData; //all the quiz questions in the quiz.json file that remain to be put in a quiz (each question is removed when it's included in a quiz)
 let quizQuestions; //the questions chosen for the current quiz
 
-try {
-    fullQuestionData = QuestionsFromData(jsonData);
-    quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
-} catch (error) {
-    window.alert(error + "<br>It looks like the quiz.json file you're using doesn't contain any quiz questions in the right format!");
-}
+fetch('assets/js/quiz.json')
+    .then(response => {
+        if (!response.ok) {
+        throw new Error('Network response was not ok');
+        }
+        return response.json(); // Parse the JSON from the response
+    })
+    .then(data => {
+        jsonData = data; // Assign the parsed JSON to jsonData
+        quizQuestions = jsonData.questions; // Extract the questions array
+        try {
+            fullQuestionData = QuestionsFromData(jsonData);
+            quizQuestions = shuffleAndSelectQuestions(fullQuestionData, quizStats.questionsPerQuiz);
+        } catch (error) {
+            window.alert(error + "\n\nIt looks like the quiz.json file you're using doesn't contain any quiz questions in the right format!");
+        }
+        chooseColorSchemes(document.getElementsByClassName('collapsible'), collapsibleColorScheme);
+        chooseColorSchemes(document.getElementsByClassName('flash-cards'), lessonLinkColorScheme);
+        gatherQuizStats();
+        setupAnswerClickHandler();
+        addEventListenersToSummaryLinks();
+        implementCollapsibleTexts("collapsible");
+        implementCollapsibleTexts("xtraCollapsible");
+    
+    })
+    .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+    });
+
+//Hides the quiz on startup. Needs event handler to ensure quiz is created first.
+document.getRootNode().addEventListener("DOMContentLoaded", function () {
+    showHideQuiz();
+    hideFlashCards();
+});
+
 
 
 /**
@@ -38,9 +67,10 @@ try {
  * @returns the questions from the questions node of the json import
  */
 function QuestionsFromData(data) {
-    const quizQuestions = data.questions;
+    quizQuestions = data.questions;
     return quizQuestions;
 }
+
 
 //shuffles the questions and returns the first 'num' of them, deleting the ones it has selected.
 /**
@@ -87,11 +117,7 @@ document.getElementById("start-quiz-btn").addEventListener("click", function () 
     }
 });
 
-//Hides the quiz on startup. Needs event handler to ensure quiz is created first.
-document.getRootNode().addEventListener("DOMContentLoaded", function () {
-    showHideQuiz();
-    hideFlashCards();
-});
+
 
 //Event handler for info link icon on header
 
@@ -145,7 +171,6 @@ function showHideQuiz() {
         document.getElementById("start-quiz-btn").innerHTML = "Hide quiz";
     }
 }
-
 
 //quizStats shows the stats for the current quiz.
 function gatherQuizStats() {
@@ -325,11 +350,3 @@ function genOrderedIntArray(from, to) {
     }
     return result;
 }
-
-chooseColorSchemes(document.getElementsByClassName('collapsible'), collapsibleColorScheme);
-chooseColorSchemes(document.getElementsByClassName('flash-cards'), lessonLinkColorScheme);
-gatherQuizStats();
-setupAnswerClickHandler();
-addEventListenersToSummaryLinks();
-implementCollapsibleTexts("collapsible");
-implementCollapsibleTexts("xtraCollapsible");

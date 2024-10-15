@@ -3,7 +3,7 @@
   "spot-checks": {
     "questions": [
       {
-        "question": "What do Spanish grammaticians call words with spoken stress on their last syllable?",
+        "question": "What do Spanish grammaticians call words with a spoken stress on their last syllable?",
         "answers": [
           [
             "palabras llanas",
@@ -11,7 +11,7 @@
           ],
           [
             "palabras agudas",
-            false
+            true
           ],
           [
             "palabras sobreesdrújulas",
